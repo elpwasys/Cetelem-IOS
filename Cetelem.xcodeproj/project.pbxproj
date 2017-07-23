@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EEDCC5CC1F243BE700CE5C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */; };
+		EEDCC5CE1F243BE700CE5C8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5CD1F243BE700CE5C8A /* ViewController.swift */; };
+		EEDCC5D11F243BE700CE5C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC5CF1F243BE700CE5C8A /* Main.storyboard */; };
+		EEDCC5D31F243BE700CE5C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC5D21F243BE700CE5C8A /* Assets.xcassets */; };
+		EEDCC5D61F243BE700CE5C8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC5D41F243BE700CE5C8A /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EEDCC5C81F243BE700CE5C8A /* Cetelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cetelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEDCC5CD1F243BE700CE5C8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EEDCC5D01F243BE700CE5C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEDCC5D21F243BE700CE5C8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEDCC5D51F243BE700CE5C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEDCC5D71F243BE700CE5C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEDCC5C51F243BE700CE5C8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEDCC5BF1F243BE700CE5C8A = {
+			isa = PBXGroup;
+			children = (
+				EEDCC5CA1F243BE700CE5C8A /* Cetelem */,
+				EEDCC5C91F243BE700CE5C8A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEDCC5C91F243BE700CE5C8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC5C81F243BE700CE5C8A /* Cetelem.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEDCC5CA1F243BE700CE5C8A /* Cetelem */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */,
+				EEDCC5CD1F243BE700CE5C8A /* ViewController.swift */,
+				EEDCC5CF1F243BE700CE5C8A /* Main.storyboard */,
+				EEDCC5D21F243BE700CE5C8A /* Assets.xcassets */,
+				EEDCC5D41F243BE700CE5C8A /* LaunchScreen.storyboard */,
+				EEDCC5D71F243BE700CE5C8A /* Info.plist */,
+			);
+			path = Cetelem;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEDCC5C71F243BE700CE5C8A /* Cetelem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEDCC5DA1F243BE700CE5C8A /* Build configuration list for PBXNativeTarget "Cetelem" */;
+			buildPhases = (
+				EEDCC5C41F243BE700CE5C8A /* Sources */,
+				EEDCC5C51F243BE700CE5C8A /* Frameworks */,
+				EEDCC5C61F243BE700CE5C8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cetelem;
+			productName = Cetelem;
+			productReference = EEDCC5C81F243BE700CE5C8A /* Cetelem.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEDCC5C01F243BE700CE5C8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Wasys Technology";
+				TargetAttributes = {
+					EEDCC5C71F243BE700CE5C8A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = A5AW2855YQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EEDCC5C31F243BE700CE5C8A /* Build configuration list for PBXProject "Cetelem" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEDCC5BF1F243BE700CE5C8A;
+			productRefGroup = EEDCC5C91F243BE700CE5C8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEDCC5C71F243BE700CE5C8A /* Cetelem */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEDCC5C61F243BE700CE5C8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDCC5D61F243BE700CE5C8A /* LaunchScreen.storyboard in Resources */,
+				EEDCC5D31F243BE700CE5C8A /* Assets.xcassets in Resources */,
+				EEDCC5D11F243BE700CE5C8A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEDCC5C41F243BE700CE5C8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDCC5CE1F243BE700CE5C8A /* ViewController.swift in Sources */,
+				EEDCC5CC1F243BE700CE5C8A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EEDCC5CF1F243BE700CE5C8A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEDCC5D01F243BE700CE5C8A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EEDCC5D41F243BE700CE5C8A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEDCC5D51F243BE700CE5C8A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEDCC5D81F243BE700CE5C8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EEDCC5D91F243BE700CE5C8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEDCC5DB1F243BE700CE5C8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A5AW2855YQ;
+				INFOPLIST_FILE = Cetelem/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wasys.com.br.Cetelem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EEDCC5DC1F243BE700CE5C8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A5AW2855YQ;
+				INFOPLIST_FILE = Cetelem/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wasys.com.br.Cetelem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEDCC5C31F243BE700CE5C8A /* Build configuration list for PBXProject "Cetelem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEDCC5D81F243BE700CE5C8A /* Debug */,
+				EEDCC5D91F243BE700CE5C8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEDCC5DA1F243BE700CE5C8A /* Build configuration list for PBXNativeTarget "Cetelem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEDCC5DB1F243BE700CE5C8A /* Debug */,
+				EEDCC5DC1F243BE700CE5C8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEDCC5C01F243BE700CE5C8A /* Project object */;
+}
