@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SwitchTableViewCell" customModule="Cetelem" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="62.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xDi-Xt-j03">
+                        <rect key="frame" x="255" y="16" width="51" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="3cg-iN-HKO"/>
+                            <constraint firstAttribute="width" constant="49" id="jal-Y3-Aq0"/>
+                        </constraints>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6H-mx-36t">
+                        <rect key="frame" x="16" y="16" width="231" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="6eG-9A-AIl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                        <color key="textColor" red="0.61953866481781006" green="0.6196478009223938" blue="0.61953175067901611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="v6H-mx-36t" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="EUe-Ic-DhB"/>
+                    <constraint firstItem="v6H-mx-36t" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IeR-5h-YFU"/>
+                    <constraint firstAttribute="trailing" secondItem="xDi-Xt-j03" secondAttribute="trailing" constant="16" id="cnW-Me-hHG"/>
+                    <constraint firstItem="xDi-Xt-j03" firstAttribute="leading" secondItem="v6H-mx-36t" secondAttribute="trailing" constant="8" id="dCM-c0-8iO"/>
+                    <constraint firstItem="xDi-Xt-j03" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="h8F-QI-Pj2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="tintColor" red="0.28025132419999998" green="0.69198763370000005" blue="0.29347819089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="control" destination="xDi-Xt-j03" id="3dH-6k-LX3"/>
+                <outlet property="label" destination="v6H-mx-36t" id="Hga-hn-psq"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="92.5"/>
+        </tableViewCell>
+    </objects>
+</document>

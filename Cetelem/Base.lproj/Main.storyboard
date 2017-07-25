@@ -1,14 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Scene.Start" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="StartViewController" customModule="Cetelem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +25,147 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="G81-U3-eTH">
+                                <rect key="frame" x="16" y="269" width="343" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="hHg-IM-hvR"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="G81-U3-eTH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GOr-dA-LuK"/>
+                            <constraint firstAttribute="trailing" secondItem="G81-U3-eTH" secondAttribute="trailing" constant="16" id="feB-w5-hm6"/>
+                            <constraint firstItem="G81-U3-eTH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="jb8-NK-OIc"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="dB4-aR-8zU">
+            <objects>
+                <viewController storyboardIdentifier="Scene.Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gPA-RC-Ku0" customClass="LoginViewController" customModule="Cetelem" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6bC-x4-Z6a"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zh5-mY-Zom"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XK9-LQ-Tuw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMD-sQ-beR">
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="440"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="wuN-dS-qXc">
+                                        <rect key="frame" x="16" y="16" width="343" height="116"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="116" id="v2h-LR-T3p"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo ao Cetelem" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Liw-gy-ihD">
+                                        <rect key="frame" x="16" y="140" width="343" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="fxr-2S-I4q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                        <color key="textColor" red="0.25879135727882385" green="0.2588421106338501" blue="0.25878816843032837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faça seu login." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2r-Ie-vAs">
+                                        <rect key="frame" x="16" y="169" width="343" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="qi4-Ya-9dK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LPK-NA-O8m" customClass="MaterialTextField" customModule="Cetelem" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="226" width="343" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bD5-oa-aSL"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2z-Cg-ahy" customClass="MDCRaisedButton">
+                                        <rect key="frame" x="16" y="394" width="343" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="tus-cR-C4J"/>
+                                        </constraints>
+                                        <state key="normal" title="Entrar"/>
+                                        <connections>
+                                            <action selector="onEntrarPressed" destination="gPA-RC-Ku0" eventType="touchUpInside" id="lhA-YU-58V"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OjC-yP-VJy" customClass="MaterialTextField" customModule="Cetelem" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="312" width="343" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Fn9-0E-guL"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="E2r-Ie-vAs" secondAttribute="trailing" constant="16" id="4cQ-ul-f8z"/>
+                                    <constraint firstItem="LPK-NA-O8m" firstAttribute="top" secondItem="E2r-Ie-vAs" secondAttribute="bottom" constant="36" id="81l-9H-Gma"/>
+                                    <constraint firstAttribute="trailing" secondItem="OjC-yP-VJy" secondAttribute="trailing" constant="16" id="9ZN-cc-Ci0"/>
+                                    <constraint firstAttribute="height" constant="440" id="GP4-8r-Mmy"/>
+                                    <constraint firstAttribute="trailing" secondItem="wuN-dS-qXc" secondAttribute="trailing" constant="16" id="GZB-ef-CsL"/>
+                                    <constraint firstItem="E2r-Ie-vAs" firstAttribute="top" secondItem="Liw-gy-ihD" secondAttribute="bottom" constant="8" id="Ggt-dz-Tih"/>
+                                    <constraint firstItem="Liw-gy-ihD" firstAttribute="leading" secondItem="KMD-sQ-beR" secondAttribute="leading" constant="16" id="LzR-Wo-0iQ"/>
+                                    <constraint firstItem="wuN-dS-qXc" firstAttribute="top" secondItem="KMD-sQ-beR" secondAttribute="top" constant="16" id="QtK-1K-d4S"/>
+                                    <constraint firstAttribute="trailing" secondItem="Liw-gy-ihD" secondAttribute="trailing" constant="16" id="U8p-EP-8hM"/>
+                                    <constraint firstItem="e2z-Cg-ahy" firstAttribute="top" secondItem="OjC-yP-VJy" secondAttribute="bottom" constant="52" id="Yr2-Uu-Ebd"/>
+                                    <constraint firstItem="E2r-Ie-vAs" firstAttribute="leading" secondItem="KMD-sQ-beR" secondAttribute="leading" constant="16" id="dhi-6R-ipv"/>
+                                    <constraint firstItem="Liw-gy-ihD" firstAttribute="top" secondItem="wuN-dS-qXc" secondAttribute="bottom" constant="8" id="eLg-yC-jiX"/>
+                                    <constraint firstItem="OjC-yP-VJy" firstAttribute="leading" secondItem="KMD-sQ-beR" secondAttribute="leading" constant="16" id="ecc-2z-eae"/>
+                                    <constraint firstAttribute="trailing" secondItem="e2z-Cg-ahy" secondAttribute="trailing" constant="16" id="fOu-01-9Ww"/>
+                                    <constraint firstAttribute="trailing" secondItem="LPK-NA-O8m" secondAttribute="trailing" constant="16" id="nVa-NZ-8H3"/>
+                                    <constraint firstItem="e2z-Cg-ahy" firstAttribute="leading" secondItem="KMD-sQ-beR" secondAttribute="leading" constant="16" id="nug-SQ-VZ8"/>
+                                    <constraint firstItem="LPK-NA-O8m" firstAttribute="leading" secondItem="KMD-sQ-beR" secondAttribute="leading" constant="16" id="sve-If-YUi"/>
+                                    <constraint firstItem="wuN-dS-qXc" firstAttribute="leading" secondItem="KMD-sQ-beR" secondAttribute="leading" constant="16" id="uAO-YC-w6l"/>
+                                    <constraint firstItem="OjC-yP-VJy" firstAttribute="top" secondItem="LPK-NA-O8m" secondAttribute="bottom" constant="56" id="w5E-7P-Dcd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KMD-sQ-beR" firstAttribute="centerY" secondItem="XK9-LQ-Tuw" secondAttribute="centerY" id="5aZ-qT-uDQ"/>
+                            <constraint firstAttribute="trailing" secondItem="KMD-sQ-beR" secondAttribute="trailing" id="7d5-G8-pp5"/>
+                            <constraint firstItem="KMD-sQ-beR" firstAttribute="leading" secondItem="XK9-LQ-Tuw" secondAttribute="leading" id="zMj-5k-In2"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="entrarButton" destination="e2z-Cg-ahy" id="zkm-zl-XCm"/>
+                        <outlet property="loginTextField" destination="LPK-NA-O8m" id="BG0-Cc-jIS"/>
+                        <outlet property="senhaTextField" destination="OjC-yP-VJy" id="QAh-X5-MFJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGN-1u-QMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="36"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="L6g-0g-ZFU">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Storyboard.Menu" storyboardName="Menu" id="aPI-80-dcr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhT-aY-JC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1795" y="14"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="201" height="89"/>
+    </resources>
+    <color key="tintColor" red="0.28025132419999998" green="0.69198763370000005" blue="0.29347819089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

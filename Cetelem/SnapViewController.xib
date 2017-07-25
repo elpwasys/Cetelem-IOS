@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SnapViewController" customModule="Cetelem" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraButton" destination="dvE-YT-mgq" id="FoX-xZ-She"/>
+                <outlet property="centerView" destination="FBM-CL-1sT" id="xsf-hS-aue"/>
+                <outlet property="closeButton" destination="jkz-JL-2Zm" id="Idy-aZ-0vp"/>
+                <outlet property="okButton" destination="5yD-71-rzj" id="MAd-xJ-lBT"/>
+                <outlet property="pageControl" destination="DIj-zF-Aao" id="Zez-n8-41Z"/>
+                <outlet property="scrollView" destination="lcf-WV-5zg" id="Ogr-ys-6lA"/>
+                <outlet property="trashButton" destination="bob-eJ-r9N" id="eoz-Zs-6mc"/>
+                <outlet property="view" destination="yXr-YU-kft" id="HSh-Wa-Cdt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yXr-YU-kft">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBM-CL-1sT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcf-WV-5zg">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="lcf-WV-5zg" firstAttribute="leading" secondItem="FBM-CL-1sT" secondAttribute="leading" id="FYy-Se-0aV"/>
+                        <constraint firstItem="lcf-WV-5zg" firstAttribute="top" secondItem="FBM-CL-1sT" secondAttribute="top" id="ag4-ZP-EAW"/>
+                        <constraint firstAttribute="bottom" secondItem="lcf-WV-5zg" secondAttribute="bottom" id="nur-yI-7ec"/>
+                        <constraint firstAttribute="trailing" secondItem="lcf-WV-5zg" secondAttribute="trailing" id="pKm-NY-pdT"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkz-JL-2Zm">
+                    <rect key="frame" x="8" y="8" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="daW-MS-0UI"/>
+                        <constraint firstAttribute="width" constant="40" id="eJx-My-ffV"/>
+                    </constraints>
+                    <state key="normal" image="snap-close.png">
+                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onCloseTapped" destination="-1" eventType="touchUpInside" id="Dnm-QK-3LR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bob-eJ-r9N">
+                    <rect key="frame" x="171" y="555" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="BTh-il-Uca"/>
+                        <constraint firstAttribute="width" constant="32" id="lr9-Im-fHC"/>
+                    </constraints>
+                    <state key="normal" image="snap-trash.png">
+                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onTrashTapped" destination="-1" eventType="touchUpInside" id="PwX-ZP-Pjr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvE-YT-mgq">
+                    <rect key="frame" x="8" y="619" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5ML-ws-nuh"/>
+                        <constraint firstAttribute="width" constant="40" id="Hz0-nl-i1M"/>
+                    </constraints>
+                    <state key="normal" image="snap-camera.png">
+                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onCameraTapped" destination="-1" eventType="touchUpInside" id="WUa-EL-kfA"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="DIj-zF-Aao">
+                    <rect key="frame" x="56" y="621" width="263" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="vit-iI-Elv"/>
+                    </constraints>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yD-71-rzj">
+                    <rect key="frame" x="327" y="619" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="MVX-gM-9xw"/>
+                        <constraint firstAttribute="height" constant="40" id="QfF-Ds-xkg"/>
+                    </constraints>
+                    <state key="normal" image="snap-check.png">
+                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onOkTapped" destination="-1" eventType="touchUpInside" id="WD7-Dk-8Wt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="dvE-YT-mgq" firstAttribute="leading" secondItem="yXr-YU-kft" secondAttribute="leading" constant="8" id="2BI-E3-4aK"/>
+                <constraint firstItem="5yD-71-rzj" firstAttribute="leading" secondItem="DIj-zF-Aao" secondAttribute="trailing" constant="8" id="Acc-7T-BsU"/>
+                <constraint firstAttribute="bottom" secondItem="DIj-zF-Aao" secondAttribute="bottom" constant="9" id="AtP-WS-sKH"/>
+                <constraint firstAttribute="bottom" secondItem="FBM-CL-1sT" secondAttribute="bottom" id="C2V-Hr-83y"/>
+                <constraint firstAttribute="bottom" secondItem="bob-eJ-r9N" secondAttribute="bottom" constant="80" id="Lxf-HG-S7D"/>
+                <constraint firstItem="jkz-JL-2Zm" firstAttribute="top" secondItem="yXr-YU-kft" secondAttribute="top" constant="8" id="RB6-Wn-5Qz"/>
+                <constraint firstItem="bob-eJ-r9N" firstAttribute="centerX" secondItem="yXr-YU-kft" secondAttribute="centerX" id="Z6S-Xf-3Oa"/>
+                <constraint firstItem="DIj-zF-Aao" firstAttribute="leading" secondItem="dvE-YT-mgq" secondAttribute="trailing" constant="8" id="c4Z-a1-zLW"/>
+                <constraint firstItem="jkz-JL-2Zm" firstAttribute="leading" secondItem="yXr-YU-kft" secondAttribute="leading" constant="8" id="fgh-5q-ytq"/>
+                <constraint firstAttribute="bottom" secondItem="dvE-YT-mgq" secondAttribute="bottom" constant="8" id="gxd-QJ-jtY"/>
+                <constraint firstAttribute="trailing" secondItem="5yD-71-rzj" secondAttribute="trailing" constant="8" id="jH4-iF-FqL"/>
+                <constraint firstAttribute="trailing" secondItem="FBM-CL-1sT" secondAttribute="trailing" id="oCr-xt-zIJ"/>
+                <constraint firstItem="FBM-CL-1sT" firstAttribute="top" secondItem="yXr-YU-kft" secondAttribute="top" id="pkq-xR-Hsr"/>
+                <constraint firstAttribute="bottom" secondItem="5yD-71-rzj" secondAttribute="bottom" constant="8" id="sT4-BD-zsf"/>
+                <constraint firstItem="FBM-CL-1sT" firstAttribute="leading" secondItem="yXr-YU-kft" secondAttribute="leading" id="ufP-xp-PKV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="33.5" y="77.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="snap-camera.png" width="96" height="96"/>
+        <image name="snap-check.png" width="96" height="96"/>
+        <image name="snap-close.png" width="96" height="96"/>
+        <image name="snap-trash.png" width="96" height="96"/>
+    </resources>
+</document>

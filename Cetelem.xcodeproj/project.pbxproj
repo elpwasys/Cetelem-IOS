@@ -7,21 +7,195 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD9B84D53374DFA114528CC2 /* Pods_Cetelem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FBB880342F83F4E7C57F8E /* Pods_Cetelem.framework */; };
+		EE3738561F24F27E00A1FE70 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */; };
+		EE3738581F24F29400A1FE70 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */; };
+		EE37385B1F250FD900A1FE70 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */; };
+		EE37385C1F250FD900A1FE70 /* RadioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE37385A1F250FD900A1FE70 /* RadioTableViewCell.xib */; };
+		EE37385E1F25101A00A1FE70 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37385D1F25101A00A1FE70 /* RadioButton.swift */; };
+		EE3738661F2514E800A1FE70 /* snap-trash.png in Resources */ = {isa = PBXBuildFile; fileRef = EE3738601F2514E800A1FE70 /* snap-trash.png */; };
+		EE3738671F2514E800A1FE70 /* snap-close.png in Resources */ = {isa = PBXBuildFile; fileRef = EE3738611F2514E800A1FE70 /* snap-close.png */; };
+		EE3738681F2514E800A1FE70 /* snap-check.png in Resources */ = {isa = PBXBuildFile; fileRef = EE3738621F2514E800A1FE70 /* snap-check.png */; };
+		EE3738691F2514E800A1FE70 /* snap-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = EE3738631F2514E800A1FE70 /* snap-camera.png */; };
+		EE37386A1F2514E800A1FE70 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738641F2514E800A1FE70 /* SnapViewController.swift */; };
+		EE37386B1F2514E800A1FE70 /* SnapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3738651F2514E800A1FE70 /* SnapViewController.xib */; };
+		EE3738721F25153B00A1FE70 /* DocumentoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738701F25153B00A1FE70 /* DocumentoTableViewCell.swift */; };
+		EE3738751F25154A00A1FE70 /* ProcessoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738741F25154A00A1FE70 /* ProcessoTableViewCell.swift */; };
+		EE3738791F25157200A1FE70 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738771F25157200A1FE70 /* TableHeaderView.swift */; };
+		EE37387A1F25157200A1FE70 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3738781F25157200A1FE70 /* TableHeaderView.xib */; };
+		EE37387C1F2515C600A1FE70 /* NovoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37387B1F2515C600A1FE70 /* NovoViewController.swift */; };
+		EE3738811F252D5E00A1FE70 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3738801F252D5E00A1FE70 /* SWRevealViewController.m */; };
+		EE3738881F25784200A1FE70 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738861F25784200A1FE70 /* TextFieldTableViewCell.swift */; };
+		EE3738891F25784200A1FE70 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3738871F25784200A1FE70 /* TextFieldTableViewCell.xib */; };
+		EE37388B1F259F5900A1FE70 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37388A1F259F5900A1FE70 /* Button.swift */; };
+		EE37388E1F259F8400A1FE70 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37388D1F259F8400A1FE70 /* RoundButton.swift */; };
+		EE3738911F25AAFA00A1FE70 /* DocumentoDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37388F1F25AAFA00A1FE70 /* DocumentoDialogViewController.swift */; };
+		EE3738991F25AFAD00A1FE70 /* PesquisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738981F25AFAD00A1FE70 /* PesquisaViewController.swift */; };
+		EED57F8E1F26FF1400A48837 /* UploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F8D1F26FF1400A48837 /* UploadModel.swift */; };
+		EED57F911F27055800A48837 /* Arquivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F901F27055800A48837 /* Arquivo.swift */; };
+		EED57F931F2705F100A48837 /* Digitalizacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F921F2705F100A48837 /* Digitalizacao.swift */; };
+		EED57F951F27082800A48837 /* ArquivoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F941F27082800A48837 /* ArquivoModel.swift */; };
+		EED57F971F270A0900A48837 /* DigitalizacaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F961F270A0900A48837 /* DigitalizacaoModel.swift */; };
+		EED57F991F270E3600A48837 /* DigitalizacaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F981F270E3600A48837 /* DigitalizacaoService.swift */; };
+		EED57F9B1F27137C00A48837 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F9A1F27137C00A48837 /* RealmService.swift */; };
+		EED57F9F1F27407D00A48837 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F9E1F27407D00A48837 /* ResultModel.swift */; };
 		EEDCC5CC1F243BE700CE5C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */; };
-		EEDCC5CE1F243BE700CE5C8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5CD1F243BE700CE5C8A /* ViewController.swift */; };
 		EEDCC5D11F243BE700CE5C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC5CF1F243BE700CE5C8A /* Main.storyboard */; };
 		EEDCC5D31F243BE700CE5C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC5D21F243BE700CE5C8A /* Assets.xcassets */; };
 		EEDCC5D61F243BE700CE5C8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC5D41F243BE700CE5C8A /* LaunchScreen.storyboard */; };
+		EEDCC5EB1F243DA300CE5C8A /* ProcessoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5E21F243DA300CE5C8A /* ProcessoModel.swift */; };
+		EEDCC5EC1F243DA300CE5C8A /* TipoProcessoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5E31F243DA300CE5C8A /* TipoProcessoModel.swift */; };
+		EEDCC5ED1F243DA300CE5C8A /* PagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5E41F243DA300CE5C8A /* PagingModel.swift */; };
+		EEDCC5EE1F243DA300CE5C8A /* ProcessoPagingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5E51F243DA300CE5C8A /* ProcessoPagingModel.swift */; };
+		EEDCC5EF1F243DA300CE5C8A /* PesquisaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5E61F243DA300CE5C8A /* PesquisaModel.swift */; };
+		EEDCC5F01F243DA300CE5C8A /* FiltroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5E71F243DA300CE5C8A /* FiltroModel.swift */; };
+		EEDCC5F11F243DA300CE5C8A /* CampoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5E81F243DA300CE5C8A /* CampoModel.swift */; };
+		EEDCC5F21F243DA300CE5C8A /* CampoGrupoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5E91F243DA300CE5C8A /* CampoGrupoModel.swift */; };
+		EEDCC5F31F243DA300CE5C8A /* TipoDocumentoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5EA1F243DA300CE5C8A /* TipoDocumentoModel.swift */; };
+		EEDCC6031F243DD600CE5C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC6021F243DD600CE5C8A /* Assets.xcassets */; };
+		EEDCC60C1F243E0B00CE5C8A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6071F243E0B00CE5C8A /* DateUtils.swift */; };
+		EEDCC60D1F243E0B00CE5C8A /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6081F243E0B00CE5C8A /* NumberUtils.swift */; };
+		EEDCC60E1F243E0B00CE5C8A /* TextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6091F243E0B00CE5C8A /* TextUtils.swift */; };
+		EEDCC60F1F243E0B00CE5C8A /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC60A1F243E0B00CE5C8A /* ViewUtils.swift */; };
+		EEDCC6101F243E0B00CE5C8A /* ShadowUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC60B1F243E0B00CE5C8A /* ShadowUtils.swift */; };
+		EEDCC6121F243E1000CE5C8A /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6111F243E1000CE5C8A /* HttpStatus.swift */; };
+		EEDCC6171F243E2400CE5C8A /* DateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6131F243E2400CE5C8A /* DateField.swift */; };
+		EEDCC6181F243E2400CE5C8A /* PickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6141F243E2400CE5C8A /* PickerField.swift */; };
+		EEDCC6191F243E2400CE5C8A /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6151F243E2400CE5C8A /* MaterialTextField.swift */; };
+		EEDCC61A1F243E2400CE5C8A /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6161F243E2400CE5C8A /* Label.swift */; };
+		EEDCC6241F243E2D00CE5C8A /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC61B1F243E2D00CE5C8A /* App.swift */; };
+		EEDCC6251F243E2D00CE5C8A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC61C1F243E2D00CE5C8A /* Color.swift */; };
+		EEDCC6261F243E2D00CE5C8A /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC61D1F243E2D00CE5C8A /* Icon.swift */; };
+		EEDCC6271F243E2D00CE5C8A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC61E1F243E2D00CE5C8A /* Service.swift */; };
+		EEDCC6281F243E2D00CE5C8A /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC61F1F243E2D00CE5C8A /* AppViewController.swift */; };
+		EEDCC6291F243E2D00CE5C8A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6201F243E2D00CE5C8A /* Model.swift */; };
+		EEDCC62A1F243E2D00CE5C8A /* Trouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6211F243E2D00CE5C8A /* Trouble.swift */; };
+		EEDCC62B1F243E2D00CE5C8A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6221F243E2D00CE5C8A /* Network.swift */; };
+		EEDCC62C1F243E2D00CE5C8A /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6231F243E2D00CE5C8A /* Dimens.swift */; };
+		EEDCC6311F243E6A00CE5C8A /* ProcessoMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC62F1F243E6A00CE5C8A /* ProcessoMeta.swift */; };
+		EEDCC6321F243E6A00CE5C8A /* TipoProcessoMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6301F243E6A00CE5C8A /* TipoProcessoMeta.swift */; };
+		EEDCC6341F243E7000CE5C8A /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6331F243E7000CE5C8A /* DataSet.swift */; };
+		EEDCC6381F243E8C00CE5C8A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6371F243E8C00CE5C8A /* MenuTableViewCell.swift */; };
+		EEDCC63E1F243E9B00CE5C8A /* DispositivoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC63A1F243E9B00CE5C8A /* DispositivoService.swift */; };
+		EEDCC63F1F243E9B00CE5C8A /* PesquisaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC63B1F243E9B00CE5C8A /* PesquisaService.swift */; };
+		EEDCC6401F243E9B00CE5C8A /* ProcessoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC63C1F243E9B00CE5C8A /* ProcessoService.swift */; };
+		EEDCC6411F243E9B00CE5C8A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC63D1F243E9B00CE5C8A /* ImageService.swift */; };
+		EEDCC6481F243EA800CE5C8A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6421F243EA800CE5C8A /* StartViewController.swift */; };
+		EEDCC6491F243EA800CE5C8A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6431F243EA800CE5C8A /* LoginViewController.swift */; };
+		EEDCC64A1F243EA800CE5C8A /* CetelemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6441F243EA800CE5C8A /* CetelemViewController.swift */; };
+		EEDCC64B1F243EA800CE5C8A /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6451F243EA800CE5C8A /* FrontViewController.swift */; };
+		EEDCC64C1F243EA800CE5C8A /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6461F243EA800CE5C8A /* DrawerViewController.swift */; };
+		EEDCC64D1F243EA800CE5C8A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6471F243EA800CE5C8A /* MenuViewController.swift */; };
+		EEDCC64F1F243ECC00CE5C8A /* Cetelem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC64E1F243ECC00CE5C8A /* Cetelem.swift */; };
+		EEDCC6511F2442FC00CE5C8A /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC6501F2442FC00CE5C8A /* Menu.storyboard */; };
+		EEDCC6541F2447BB00CE5C8A /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC6521F2447BB00CE5C8A /* config.plist */; };
+		EEDCC6551F2447BB00CE5C8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC6531F2447BB00CE5C8A /* Localizable.strings */; };
+		EEDCC65B1F2450BB00CE5C8A /* CampoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC65A1F2450BB00CE5C8A /* CampoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32FBB880342F83F4E7C57F8E /* Pods_Cetelem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cetelem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
+		EE37385A1F250FD900A1FE70 /* RadioTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioTableViewCell.xib; sourceTree = "<group>"; };
+		EE37385D1F25101A00A1FE70 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		EE3738601F2514E800A1FE70 /* snap-trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snap-trash.png"; sourceTree = "<group>"; };
+		EE3738611F2514E800A1FE70 /* snap-close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snap-close.png"; sourceTree = "<group>"; };
+		EE3738621F2514E800A1FE70 /* snap-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snap-check.png"; sourceTree = "<group>"; };
+		EE3738631F2514E800A1FE70 /* snap-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snap-camera.png"; sourceTree = "<group>"; };
+		EE3738641F2514E800A1FE70 /* SnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
+		EE3738651F2514E800A1FE70 /* SnapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SnapViewController.xib; sourceTree = "<group>"; };
+		EE3738701F25153B00A1FE70 /* DocumentoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentoTableViewCell.swift; sourceTree = "<group>"; };
+		EE3738741F25154A00A1FE70 /* ProcessoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessoTableViewCell.swift; sourceTree = "<group>"; };
+		EE3738771F25157200A1FE70 /* TableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		EE3738781F25157200A1FE70 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		EE37387B1F2515C600A1FE70 /* NovoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovoViewController.swift; sourceTree = "<group>"; };
+		EE37387E1F252D5D00A1FE70 /* Cetelem-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cetelem-Bridging-Header.h"; sourceTree = "<group>"; };
+		EE37387F1F252D5E00A1FE70 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		EE3738801F252D5E00A1FE70 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		EE3738861F25784200A1FE70 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		EE3738871F25784200A1FE70 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		EE37388A1F259F5900A1FE70 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		EE37388D1F259F8400A1FE70 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		EE37388F1F25AAFA00A1FE70 /* DocumentoDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentoDialogViewController.swift; sourceTree = "<group>"; };
+		EE3738981F25AFAD00A1FE70 /* PesquisaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PesquisaViewController.swift; sourceTree = "<group>"; };
+		EED57F8D1F26FF1400A48837 /* UploadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadModel.swift; sourceTree = "<group>"; };
+		EED57F901F27055800A48837 /* Arquivo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arquivo.swift; sourceTree = "<group>"; };
+		EED57F921F2705F100A48837 /* Digitalizacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Digitalizacao.swift; sourceTree = "<group>"; };
+		EED57F941F27082800A48837 /* ArquivoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArquivoModel.swift; sourceTree = "<group>"; };
+		EED57F961F270A0900A48837 /* DigitalizacaoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalizacaoModel.swift; sourceTree = "<group>"; };
+		EED57F981F270E3600A48837 /* DigitalizacaoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalizacaoService.swift; sourceTree = "<group>"; };
+		EED57F9A1F27137C00A48837 /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		EED57F9E1F27407D00A48837 /* ResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		EEDCC5C81F243BE700CE5C8A /* Cetelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cetelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EEDCC5CD1F243BE700CE5C8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EEDCC5D01F243BE700CE5C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEDCC5D21F243BE700CE5C8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEDCC5D51F243BE700CE5C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEDCC5D71F243BE700CE5C8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEDCC5E21F243DA300CE5C8A /* ProcessoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessoModel.swift; sourceTree = "<group>"; };
+		EEDCC5E31F243DA300CE5C8A /* TipoProcessoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoProcessoModel.swift; sourceTree = "<group>"; };
+		EEDCC5E41F243DA300CE5C8A /* PagingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingModel.swift; sourceTree = "<group>"; };
+		EEDCC5E51F243DA300CE5C8A /* ProcessoPagingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessoPagingModel.swift; sourceTree = "<group>"; };
+		EEDCC5E61F243DA300CE5C8A /* PesquisaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PesquisaModel.swift; sourceTree = "<group>"; };
+		EEDCC5E71F243DA300CE5C8A /* FiltroModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltroModel.swift; sourceTree = "<group>"; };
+		EEDCC5E81F243DA300CE5C8A /* CampoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampoModel.swift; sourceTree = "<group>"; };
+		EEDCC5E91F243DA300CE5C8A /* CampoGrupoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampoGrupoModel.swift; sourceTree = "<group>"; };
+		EEDCC5EA1F243DA300CE5C8A /* TipoDocumentoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoDocumentoModel.swift; sourceTree = "<group>"; };
+		EEDCC5F61F243DCA00CE5C8A /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		EEDCC5F71F243DCA00CE5C8A /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		EEDCC5F81F243DCA00CE5C8A /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		EEDCC5F91F243DCA00CE5C8A /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		EEDCC5FA1F243DCA00CE5C8A /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		EEDCC5FB1F243DCA00CE5C8A /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		EEDCC5FC1F243DCA00CE5C8A /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		EEDCC5FD1F243DCA00CE5C8A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		EEDCC5FE1F243DCA00CE5C8A /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		EEDCC5FF1F243DCA00CE5C8A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		EEDCC6001F243DCA00CE5C8A /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		EEDCC6011F243DCA00CE5C8A /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		EEDCC6021F243DD600CE5C8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEDCC6071F243E0B00CE5C8A /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		EEDCC6081F243E0B00CE5C8A /* NumberUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
+		EEDCC6091F243E0B00CE5C8A /* TextUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextUtils.swift; sourceTree = "<group>"; };
+		EEDCC60A1F243E0B00CE5C8A /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		EEDCC60B1F243E0B00CE5C8A /* ShadowUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowUtils.swift; sourceTree = "<group>"; };
+		EEDCC6111F243E1000CE5C8A /* HttpStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
+		EEDCC6131F243E2400CE5C8A /* DateField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateField.swift; sourceTree = "<group>"; };
+		EEDCC6141F243E2400CE5C8A /* PickerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerField.swift; sourceTree = "<group>"; };
+		EEDCC6151F243E2400CE5C8A /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		EEDCC6161F243E2400CE5C8A /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		EEDCC61B1F243E2D00CE5C8A /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		EEDCC61C1F243E2D00CE5C8A /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		EEDCC61D1F243E2D00CE5C8A /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		EEDCC61E1F243E2D00CE5C8A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		EEDCC61F1F243E2D00CE5C8A /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		EEDCC6201F243E2D00CE5C8A /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		EEDCC6211F243E2D00CE5C8A /* Trouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trouble.swift; sourceTree = "<group>"; };
+		EEDCC6221F243E2D00CE5C8A /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		EEDCC6231F243E2D00CE5C8A /* Dimens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
+		EEDCC62F1F243E6A00CE5C8A /* ProcessoMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessoMeta.swift; sourceTree = "<group>"; };
+		EEDCC6301F243E6A00CE5C8A /* TipoProcessoMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoProcessoMeta.swift; sourceTree = "<group>"; };
+		EEDCC6331F243E7000CE5C8A /* DataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
+		EEDCC6371F243E8C00CE5C8A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		EEDCC63A1F243E9B00CE5C8A /* DispositivoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispositivoService.swift; sourceTree = "<group>"; };
+		EEDCC63B1F243E9B00CE5C8A /* PesquisaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PesquisaService.swift; sourceTree = "<group>"; };
+		EEDCC63C1F243E9B00CE5C8A /* ProcessoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessoService.swift; sourceTree = "<group>"; };
+		EEDCC63D1F243E9B00CE5C8A /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		EEDCC6421F243EA800CE5C8A /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		EEDCC6431F243EA800CE5C8A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EEDCC6441F243EA800CE5C8A /* CetelemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CetelemViewController.swift; sourceTree = "<group>"; };
+		EEDCC6451F243EA800CE5C8A /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
+		EEDCC6461F243EA800CE5C8A /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		EEDCC6471F243EA800CE5C8A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		EEDCC64E1F243ECC00CE5C8A /* Cetelem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cetelem.swift; sourceTree = "<group>"; };
+		EEDCC6501F2442FC00CE5C8A /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Menu.storyboard; path = ../Menu.storyboard; sourceTree = "<group>"; };
+		EEDCC6521F2447BB00CE5C8A /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		EEDCC6531F2447BB00CE5C8A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		EEDCC65A1F2450BB00CE5C8A /* CampoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampoTableViewCell.swift; sourceTree = "<group>"; };
+		F3250BFAB819D957A881E717 /* Pods-Cetelem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cetelem.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cetelem/Pods-Cetelem.release.xcconfig"; sourceTree = "<group>"; };
+		F866A8594CCC9A52F5C2AE4E /* Pods-Cetelem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cetelem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cetelem/Pods-Cetelem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +203,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9B84D53374DFA114528CC2 /* Pods_Cetelem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E638A27C116EAFDE563F43CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32FBB880342F83F4E7C57F8E /* Pods_Cetelem.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE37385F1F2514D200A1FE70 /* Snap */ = {
+			isa = PBXGroup;
+			children = (
+				EE3738601F2514E800A1FE70 /* snap-trash.png */,
+				EE3738611F2514E800A1FE70 /* snap-close.png */,
+				EE3738621F2514E800A1FE70 /* snap-check.png */,
+				EE3738631F2514E800A1FE70 /* snap-camera.png */,
+				EE3738641F2514E800A1FE70 /* SnapViewController.swift */,
+				EE3738651F2514E800A1FE70 /* SnapViewController.xib */,
+			);
+			name = Snap;
+			path = Cetelem;
+			sourceTree = "<group>";
+		};
+		EE3738761F25156100A1FE70 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				EE3738771F25157200A1FE70 /* TableHeaderView.swift */,
+				EE3738781F25157200A1FE70 /* TableHeaderView.xib */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		EE37387D1F252D4E00A1FE70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE37387F1F252D5E00A1FE70 /* SWRevealViewController.h */,
+				EE3738801F252D5E00A1FE70 /* SWRevealViewController.m */,
+				EE37387E1F252D5D00A1FE70 /* Cetelem-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EED57F8F1F27052100A48837 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				EED57F901F27055800A48837 /* Arquivo.swift */,
+				EED57F921F2705F100A48837 /* Digitalizacao.swift */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
 		EEDCC5BF1F243BE700CE5C8A = {
 			isa = PBXGroup;
 			children = (
 				EEDCC5CA1F243BE700CE5C8A /* Cetelem */,
+				EE37385F1F2514D200A1FE70 /* Snap */,
+				EEDCC5DE1F243D2900CE5C8A /* Library */,
 				EEDCC5C91F243BE700CE5C8A /* Products */,
+				FC63F53FD03D4A4B5ED7F78A /* Pods */,
+				E638A27C116EAFDE563F43CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +283,208 @@
 		EEDCC5CA1F243BE700CE5C8A /* Cetelem */ = {
 			isa = PBXGroup;
 			children = (
-				EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */,
-				EEDCC5CD1F243BE700CE5C8A /* ViewController.swift */,
+				EEDCC5DD1F243D0A00CE5C8A /* Classes */,
 				EEDCC5CF1F243BE700CE5C8A /* Main.storyboard */,
-				EEDCC5D21F243BE700CE5C8A /* Assets.xcassets */,
+				EEDCC6501F2442FC00CE5C8A /* Menu.storyboard */,
 				EEDCC5D41F243BE700CE5C8A /* LaunchScreen.storyboard */,
 				EEDCC5D71F243BE700CE5C8A /* Info.plist */,
+				EEDCC6521F2447BB00CE5C8A /* config.plist */,
+				EEDCC6531F2447BB00CE5C8A /* Localizable.strings */,
+				EEDCC5D21F243BE700CE5C8A /* Assets.xcassets */,
+				EE37387D1F252D4E00A1FE70 /* Supporting Files */,
 			);
 			path = Cetelem;
+			sourceTree = "<group>";
+		};
+		EEDCC5DD1F243D0A00CE5C8A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EED57F8F1F27052100A48837 /* Realm */,
+				EEDCC64E1F243ECC00CE5C8A /* Cetelem.swift */,
+				EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */,
+				EEDCC6361F243E8700CE5C8A /* Cell */,
+				EE3738761F25156100A1FE70 /* Header */,
+				EEDCC5E11F243D9800CE5C8A /* Model */,
+				EEDCC6351F243E7C00CE5C8A /* ViewController */,
+				EEDCC6391F243E9400CE5C8A /* Service */,
+				EEDCC62D1F243E5C00CE5C8A /* DataSet */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		EEDCC5DE1F243D2900CE5C8A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC5F41F243DAD00CE5C8A /* Classes */,
+				EEDCC5F51F243DB900CE5C8A /* Fonts */,
+				EEDCC6021F243DD600CE5C8A /* Assets.xcassets */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		EEDCC5E11F243D9800CE5C8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC5E21F243DA300CE5C8A /* ProcessoModel.swift */,
+				EEDCC5E31F243DA300CE5C8A /* TipoProcessoModel.swift */,
+				EEDCC5E41F243DA300CE5C8A /* PagingModel.swift */,
+				EEDCC5E51F243DA300CE5C8A /* ProcessoPagingModel.swift */,
+				EED57F9E1F27407D00A48837 /* ResultModel.swift */,
+				EEDCC5E61F243DA300CE5C8A /* PesquisaModel.swift */,
+				EEDCC5E71F243DA300CE5C8A /* FiltroModel.swift */,
+				EEDCC5E81F243DA300CE5C8A /* CampoModel.swift */,
+				EEDCC5E91F243DA300CE5C8A /* CampoGrupoModel.swift */,
+				EEDCC5EA1F243DA300CE5C8A /* TipoDocumentoModel.swift */,
+				EED57F8D1F26FF1400A48837 /* UploadModel.swift */,
+				EED57F941F27082800A48837 /* ArquivoModel.swift */,
+				EED57F961F270A0900A48837 /* DigitalizacaoModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EEDCC5F41F243DAD00CE5C8A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC61B1F243E2D00CE5C8A /* App.swift */,
+				EEDCC61C1F243E2D00CE5C8A /* Color.swift */,
+				EEDCC61D1F243E2D00CE5C8A /* Icon.swift */,
+				EEDCC61E1F243E2D00CE5C8A /* Service.swift */,
+				EEDCC61F1F243E2D00CE5C8A /* AppViewController.swift */,
+				EEDCC6201F243E2D00CE5C8A /* Model.swift */,
+				EEDCC6211F243E2D00CE5C8A /* Trouble.swift */,
+				EEDCC6221F243E2D00CE5C8A /* Network.swift */,
+				EEDCC6231F243E2D00CE5C8A /* Dimens.swift */,
+				EEDCC6061F243DFF00CE5C8A /* Utils */,
+				EEDCC6051F243DFA00CE5C8A /* Http */,
+				EEDCC6041F243DEE00CE5C8A /* Widget */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		EEDCC5F51F243DB900CE5C8A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC5F61F243DCA00CE5C8A /* Roboto-Black.ttf */,
+				EEDCC5F71F243DCA00CE5C8A /* Roboto-BlackItalic.ttf */,
+				EEDCC5F81F243DCA00CE5C8A /* Roboto-Bold.ttf */,
+				EEDCC5F91F243DCA00CE5C8A /* Roboto-BoldItalic.ttf */,
+				EEDCC5FA1F243DCA00CE5C8A /* Roboto-Italic.ttf */,
+				EEDCC5FB1F243DCA00CE5C8A /* Roboto-Light.ttf */,
+				EEDCC5FC1F243DCA00CE5C8A /* Roboto-LightItalic.ttf */,
+				EEDCC5FD1F243DCA00CE5C8A /* Roboto-Medium.ttf */,
+				EEDCC5FE1F243DCA00CE5C8A /* Roboto-MediumItalic.ttf */,
+				EEDCC5FF1F243DCA00CE5C8A /* Roboto-Regular.ttf */,
+				EEDCC6001F243DCA00CE5C8A /* Roboto-Thin.ttf */,
+				EEDCC6011F243DCA00CE5C8A /* Roboto-ThinItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		EEDCC6041F243DEE00CE5C8A /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				EE37388A1F259F5900A1FE70 /* Button.swift */,
+				EE37385D1F25101A00A1FE70 /* RadioButton.swift */,
+				EEDCC6131F243E2400CE5C8A /* DateField.swift */,
+				EEDCC6141F243E2400CE5C8A /* PickerField.swift */,
+				EEDCC6151F243E2400CE5C8A /* MaterialTextField.swift */,
+				EEDCC6161F243E2400CE5C8A /* Label.swift */,
+				EE37388D1F259F8400A1FE70 /* RoundButton.swift */,
+			);
+			name = Widget;
+			sourceTree = "<group>";
+		};
+		EEDCC6051F243DFA00CE5C8A /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC6111F243E1000CE5C8A /* HttpStatus.swift */,
+			);
+			name = Http;
+			sourceTree = "<group>";
+		};
+		EEDCC6061F243DFF00CE5C8A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC6071F243E0B00CE5C8A /* DateUtils.swift */,
+				EEDCC6081F243E0B00CE5C8A /* NumberUtils.swift */,
+				EEDCC6091F243E0B00CE5C8A /* TextUtils.swift */,
+				EEDCC60A1F243E0B00CE5C8A /* ViewUtils.swift */,
+				EEDCC60B1F243E0B00CE5C8A /* ShadowUtils.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		EEDCC62D1F243E5C00CE5C8A /* DataSet */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC6331F243E7000CE5C8A /* DataSet.swift */,
+				EEDCC62E1F243E6200CE5C8A /* Meta */,
+			);
+			name = DataSet;
+			sourceTree = "<group>";
+		};
+		EEDCC62E1F243E6200CE5C8A /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC62F1F243E6A00CE5C8A /* ProcessoMeta.swift */,
+				EEDCC6301F243E6A00CE5C8A /* TipoProcessoMeta.swift */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
+		EEDCC6351F243E7C00CE5C8A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC6421F243EA800CE5C8A /* StartViewController.swift */,
+				EEDCC6431F243EA800CE5C8A /* LoginViewController.swift */,
+				EEDCC6441F243EA800CE5C8A /* CetelemViewController.swift */,
+				EEDCC6451F243EA800CE5C8A /* FrontViewController.swift */,
+				EEDCC6461F243EA800CE5C8A /* DrawerViewController.swift */,
+				EEDCC6471F243EA800CE5C8A /* MenuViewController.swift */,
+				EE3738981F25AFAD00A1FE70 /* PesquisaViewController.swift */,
+				EE37387B1F2515C600A1FE70 /* NovoViewController.swift */,
+				EE37388F1F25AAFA00A1FE70 /* DocumentoDialogViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		EEDCC6361F243E8700CE5C8A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC65A1F2450BB00CE5C8A /* CampoTableViewCell.swift */,
+				EEDCC6371F243E8C00CE5C8A /* MenuTableViewCell.swift */,
+				EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */,
+				EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */,
+				EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */,
+				EE37385A1F250FD900A1FE70 /* RadioTableViewCell.xib */,
+				EE3738701F25153B00A1FE70 /* DocumentoTableViewCell.swift */,
+				EE3738741F25154A00A1FE70 /* ProcessoTableViewCell.swift */,
+				EE3738861F25784200A1FE70 /* TextFieldTableViewCell.swift */,
+				EE3738871F25784200A1FE70 /* TextFieldTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		EEDCC6391F243E9400CE5C8A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EEDCC63A1F243E9B00CE5C8A /* DispositivoService.swift */,
+				EEDCC63B1F243E9B00CE5C8A /* PesquisaService.swift */,
+				EEDCC63C1F243E9B00CE5C8A /* ProcessoService.swift */,
+				EEDCC63D1F243E9B00CE5C8A /* ImageService.swift */,
+				EED57F981F270E3600A48837 /* DigitalizacaoService.swift */,
+				EED57F9A1F27137C00A48837 /* RealmService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		FC63F53FD03D4A4B5ED7F78A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F866A8594CCC9A52F5C2AE4E /* Pods-Cetelem.debug.xcconfig */,
+				F3250BFAB819D957A881E717 /* Pods-Cetelem.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +494,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEDCC5DA1F243BE700CE5C8A /* Build configuration list for PBXNativeTarget "Cetelem" */;
 			buildPhases = (
+				341851DD6070E952AA2E60FE /* [CP] Check Pods Manifest.lock */,
 				EEDCC5C41F243BE700CE5C8A /* Sources */,
 				EEDCC5C51F243BE700CE5C8A /* Frameworks */,
 				EEDCC5C61F243BE700CE5C8A /* Resources */,
+				00BB94FF48E08A320B8B46DB /* [CP] Embed Pods Frameworks */,
+				34BE66796DCAC9453D449EB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +523,7 @@
 					EEDCC5C71F243BE700CE5C8A = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = A5AW2855YQ;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,21 +551,147 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEDCC6511F2442FC00CE5C8A /* Menu.storyboard in Resources */,
+				EE37386B1F2514E800A1FE70 /* SnapViewController.xib in Resources */,
+				EE3738661F2514E800A1FE70 /* snap-trash.png in Resources */,
+				EE3738671F2514E800A1FE70 /* snap-close.png in Resources */,
 				EEDCC5D61F243BE700CE5C8A /* LaunchScreen.storyboard in Resources */,
+				EEDCC6541F2447BB00CE5C8A /* config.plist in Resources */,
+				EE37385C1F250FD900A1FE70 /* RadioTableViewCell.xib in Resources */,
+				EEDCC6551F2447BB00CE5C8A /* Localizable.strings in Resources */,
+				EE37387A1F25157200A1FE70 /* TableHeaderView.xib in Resources */,
 				EEDCC5D31F243BE700CE5C8A /* Assets.xcassets in Resources */,
+				EE3738681F2514E800A1FE70 /* snap-check.png in Resources */,
+				EE3738691F2514E800A1FE70 /* snap-camera.png in Resources */,
+				EE3738891F25784200A1FE70 /* TextFieldTableViewCell.xib in Resources */,
+				EE3738561F24F27E00A1FE70 /* SwitchTableViewCell.xib in Resources */,
+				EEDCC6031F243DD600CE5C8A /* Assets.xcassets in Resources */,
 				EEDCC5D11F243BE700CE5C8A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00BB94FF48E08A320B8B46DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cetelem/Pods-Cetelem-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		341851DD6070E952AA2E60FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		34BE66796DCAC9453D449EB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cetelem/Pods-Cetelem-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EEDCC5C41F243BE700CE5C8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEDCC5CE1F243BE700CE5C8A /* ViewController.swift in Sources */,
+				EE37386A1F2514E800A1FE70 /* SnapViewController.swift in Sources */,
+				EED57F9B1F27137C00A48837 /* RealmService.swift in Sources */,
+				EEDCC6291F243E2D00CE5C8A /* Model.swift in Sources */,
+				EE37385E1F25101A00A1FE70 /* RadioButton.swift in Sources */,
+				EEDCC64F1F243ECC00CE5C8A /* Cetelem.swift in Sources */,
+				EEDCC6121F243E1000CE5C8A /* HttpStatus.swift in Sources */,
+				EEDCC6321F243E6A00CE5C8A /* TipoProcessoMeta.swift in Sources */,
+				EEDCC62B1F243E2D00CE5C8A /* Network.swift in Sources */,
+				EEDCC6411F243E9B00CE5C8A /* ImageService.swift in Sources */,
+				EEDCC65B1F2450BB00CE5C8A /* CampoTableViewCell.swift in Sources */,
+				EEDCC6281F243E2D00CE5C8A /* AppViewController.swift in Sources */,
+				EEDCC6271F243E2D00CE5C8A /* Service.swift in Sources */,
+				EEDCC6481F243EA800CE5C8A /* StartViewController.swift in Sources */,
+				EEDCC6251F243E2D00CE5C8A /* Color.swift in Sources */,
+				EEDCC60C1F243E0B00CE5C8A /* DateUtils.swift in Sources */,
+				EEDCC6191F243E2400CE5C8A /* MaterialTextField.swift in Sources */,
+				EEDCC5EE1F243DA300CE5C8A /* ProcessoPagingModel.swift in Sources */,
+				EEDCC63E1F243E9B00CE5C8A /* DispositivoService.swift in Sources */,
+				EE3738911F25AAFA00A1FE70 /* DocumentoDialogViewController.swift in Sources */,
+				EEDCC6261F243E2D00CE5C8A /* Icon.swift in Sources */,
+				EEDCC64D1F243EA800CE5C8A /* MenuViewController.swift in Sources */,
+				EEDCC61A1F243E2400CE5C8A /* Label.swift in Sources */,
+				EEDCC6101F243E0B00CE5C8A /* ShadowUtils.swift in Sources */,
+				EEDCC5F11F243DA300CE5C8A /* CampoModel.swift in Sources */,
+				EE37385B1F250FD900A1FE70 /* RadioTableViewCell.swift in Sources */,
+				EEDCC6171F243E2400CE5C8A /* DateField.swift in Sources */,
+				EED57F971F270A0900A48837 /* DigitalizacaoModel.swift in Sources */,
+				EED57F991F270E3600A48837 /* DigitalizacaoService.swift in Sources */,
+				EEDCC5EF1F243DA300CE5C8A /* PesquisaModel.swift in Sources */,
+				EEDCC5ED1F243DA300CE5C8A /* PagingModel.swift in Sources */,
+				EEDCC6401F243E9B00CE5C8A /* ProcessoService.swift in Sources */,
+				EEDCC60E1F243E0B00CE5C8A /* TextUtils.swift in Sources */,
+				EEDCC5EC1F243DA300CE5C8A /* TipoProcessoModel.swift in Sources */,
+				EEDCC6241F243E2D00CE5C8A /* App.swift in Sources */,
+				EEDCC5F01F243DA300CE5C8A /* FiltroModel.swift in Sources */,
+				EEDCC6381F243E8C00CE5C8A /* MenuTableViewCell.swift in Sources */,
+				EEDCC6181F243E2400CE5C8A /* PickerField.swift in Sources */,
+				EEDCC6491F243EA800CE5C8A /* LoginViewController.swift in Sources */,
+				EE3738811F252D5E00A1FE70 /* SWRevealViewController.m in Sources */,
+				EEDCC62A1F243E2D00CE5C8A /* Trouble.swift in Sources */,
+				EE3738991F25AFAD00A1FE70 /* PesquisaViewController.swift in Sources */,
+				EED57F8E1F26FF1400A48837 /* UploadModel.swift in Sources */,
+				EE3738791F25157200A1FE70 /* TableHeaderView.swift in Sources */,
+				EE3738581F24F29400A1FE70 /* SwitchTableViewCell.swift in Sources */,
+				EE37387C1F2515C600A1FE70 /* NovoViewController.swift in Sources */,
+				EEDCC64B1F243EA800CE5C8A /* FrontViewController.swift in Sources */,
+				EEDCC6311F243E6A00CE5C8A /* ProcessoMeta.swift in Sources */,
+				EE3738721F25153B00A1FE70 /* DocumentoTableViewCell.swift in Sources */,
+				EED57F931F2705F100A48837 /* Digitalizacao.swift in Sources */,
+				EE37388B1F259F5900A1FE70 /* Button.swift in Sources */,
+				EEDCC64A1F243EA800CE5C8A /* CetelemViewController.swift in Sources */,
+				EE3738751F25154A00A1FE70 /* ProcessoTableViewCell.swift in Sources */,
+				EED57F951F27082800A48837 /* ArquivoModel.swift in Sources */,
 				EEDCC5CC1F243BE700CE5C8A /* AppDelegate.swift in Sources */,
+				EEDCC63F1F243E9B00CE5C8A /* PesquisaService.swift in Sources */,
+				EEDCC5F31F243DA300CE5C8A /* TipoDocumentoModel.swift in Sources */,
+				EED57F911F27055800A48837 /* Arquivo.swift in Sources */,
+				EED57F9F1F27407D00A48837 /* ResultModel.swift in Sources */,
+				EEDCC6341F243E7000CE5C8A /* DataSet.swift in Sources */,
+				EE37388E1F259F8400A1FE70 /* RoundButton.swift in Sources */,
+				EEDCC60F1F243E0B00CE5C8A /* ViewUtils.swift in Sources */,
+				EEDCC5F21F243DA300CE5C8A /* CampoGrupoModel.swift in Sources */,
+				EE3738881F25784200A1FE70 /* TextFieldTableViewCell.swift in Sources */,
+				EEDCC62C1F243E2D00CE5C8A /* Dimens.swift in Sources */,
+				EEDCC60D1F243E0B00CE5C8A /* NumberUtils.swift in Sources */,
+				EEDCC5EB1F243DA300CE5C8A /* ProcessoModel.swift in Sources */,
+				EEDCC64C1F243EA800CE5C8A /* DrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,26 +812,33 @@
 		};
 		EEDCC5DB1F243BE700CE5C8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F866A8594CCC9A52F5C2AE4E /* Pods-Cetelem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A5AW2855YQ;
 				INFOPLIST_FILE = Cetelem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wasys.com.br.Cetelem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cetelem/Cetelem-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		EEDCC5DC1F243BE700CE5C8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3250BFAB819D957A881E717 /* Pods-Cetelem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A5AW2855YQ;
 				INFOPLIST_FILE = Cetelem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wasys.com.br.Cetelem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cetelem/Cetelem-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +862,7 @@
 				EEDCC5DC1F243BE700CE5C8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

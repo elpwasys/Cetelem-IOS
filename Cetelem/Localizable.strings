@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+
+  Created by Everton Luiz Pascke on 09/11/16.
+  Copyright © 2016 Everton Luiz Pascke. All rights reserved.
+*/
+
+/* Title */
+"Title.Root" = "Cetelem";
+"Title.Pesquisa" = "Pesquisa";
+"Titulo.Processo" = "Processo";
+
+/* Processo Status */
+"Processo.Status.rascunho" = "Rascunho";
+"Processo.Status.aguardandoAnalise" = "Aguardando Análise";
+"Processo.Status.emAnalise" = "Em Análise";
+"Processo.Status.pendente" = "Pendente";
+"Processo.Status.emAcompanhamento" = "Em Acompanhamento";
+"Processo.Status.concluido" = "Concluído";
+"Processo.Status.cancelado" = "Cancelado";
+"Processo.Status.emProcessamento" = "Em Processamento";
+
+/* Menu */
+"Menu.Processo" = "Processo";
+"Menu.Novo" = "Novo";
+"Menu.Pesquisar" = "Pesquisar";
+"Menu.Aplicativo" = "Aplicativo";
+"Menu.Sair" = "Sair";
+
+/* Label */
+"Label.Ok" = "Ok";
+"Label.Sair" = "Sair";
+"Label.Sim" = "Sim";
+"Label.Nao" = "Não";
+"Label.Login" = "Login";
+"Label.Senha" = "Senha";
+"Label.Selecione" = "-- Selecione --";
+"Label.Opcionais" = "Opcionais";
+"Label.Obrigatorios" = "Obrigatórios";
+"Label.CampoObrigatorio" = "é obrigatório";
+
+/* Message */
+"Message.CampoInvalidoMinLength" = "o tamanho mínimo é";
+"Message.CampoInvalidoMaxLength" = "o tamanho máximo é";
+"Message.ServidorIndisponivel" = "Não foi possível conectar ao servidor.";
+"Message.InternetIndisponivel" = "Não há conexão com a internet";
+"Message.EmailInvalido" = "Email inválido!";
+"Message.CodigoInvalido" = "Código inválido!";
+"Message.SairAplicativo" = "Deseja sair do aplicativo?";
+"Message.SemRegistrosExibir" = "Sem registros para exibir";
+"Message.FormularioInvalido" = "Verifique os campos inválidos ou obrigatórios!";
