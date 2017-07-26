@@ -28,6 +28,12 @@ class DigitalizacaoModel {
     enum Tipo: String {
         case documento = "DOCUMENTO"
         case tipificacao = "TIPIFICACAO"
+        var key: String {
+            return "Digitalizacao.Tipo.\(self)"
+        }
+        var label: String {
+            return TextUtils.localized(forKey: key)
+        }
     }
     
     enum Status: String {
@@ -35,6 +41,31 @@ class DigitalizacaoModel {
         case enviado = "ENVIADO"
         case enviando = "ENVIANDO"
         case aguardando = "AGUARDANDO"
+        var key: String {
+            return "Digitalizacao.Status.\(self)"
+        }
+        var label: String {
+            return TextUtils.localized(forKey: key)
+        }
+        var textColor: UIColor {
+            return Color.white
+        }
+        var shadowColor: UIColor {
+            switch self {
+            case .erro: return Color.red900
+            case .enviado: return Color.green900
+            case .enviando: return Color.orange900
+            case .aguardando: return Color.grey900
+            }
+        }
+        var backgroundColor: UIColor {
+            switch self {
+                case .erro: return Color.red500
+                case .enviado: return Color.green500
+                case .enviando: return Color.orange500
+                case .aguardando: return Color.grey500
+            }
+        }
     }
     
     static func from(_ digitalizacao: Digitalizacao) -> DigitalizacaoModel {

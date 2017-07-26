@@ -13,6 +13,7 @@ struct Icon {
         return UIImage(named: named)/*?.withRenderingMode(.alwaysTemplate)*/
     }
     static let add = icon("ic_add")
+    static let info = icon("ic_info")
     static let menu = icon("ic_menu")
     static let lock = icon("ic_lock")
     static let camera = icon("ic_camera")

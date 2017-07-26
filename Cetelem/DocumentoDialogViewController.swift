@@ -58,9 +58,7 @@ extension DocumentoDialogViewController {
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: TableHeaderView.nibName, bundle: nil), forHeaderFooterViewReuseIdentifier: TableHeaderView.reusableCellIdentifier)
         ShadowUtils.applyBottom(topView)
-        ShadowUtils.applyTop(bottomView)
-        //topView.borderBottomWith(color: Color.grey500, width: 1)
-        //bottomView.borderTopWith(color: Color.grey500, width: 1)
+        bottomView.borderTopWith(color: Color.grey300, width: 1)
         if let models = self.models {
             for model in models {
                 if !model.isObrigatorio {
@@ -116,7 +114,7 @@ extension DocumentoDialogViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentoTableViewCell", for: indexPath) as! DocumentoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TipoDocumentoTableViewCell", for: indexPath) as! TipoDocumentoTableViewCell
         let documento: TipoDocumentoModel
         if indexPath.section == 0 {
             documento = obrigatorios[indexPath.row]

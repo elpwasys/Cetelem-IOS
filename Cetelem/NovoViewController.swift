@@ -281,7 +281,12 @@ extension NovoViewController: UITableViewDataSource {
 extension NovoViewController {
     
     fileprivate func asyncSalvarCompleted(_ model: ProcessoModel) {
-        
+        let navigation = UIStoryboard.viewController("Menu", identifier: "Nav.Processo.Detalhe") as! UINavigationController
+        let controller = navigation.viewControllers.first! as! ProcessoDetalheViewController
+        controller.id = model.id!
+        revealViewController().pushFrontViewController(navigation, animated: true)
+        let content = TextUtils.localized(forKey: "Message.ProcessoSalvoSucesso")
+        showMessage(content: content, theme: .success)
     }
     
     fileprivate func asyncDataSetCompleted(_ dataSet: DataSet<ProcessoModel, ProcessoMeta>) {

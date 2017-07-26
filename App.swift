@@ -12,12 +12,14 @@ import SystemConfiguration
 class App {
     static let locale = Locale(identifier: "pt_BR")
     class Message {
-        var theme = Theme.info
+        var theme: Theme?
         var layout: MessageView.Layout?
         var title: String?
         var content: String!
         var dimMode: SwiftMessages.DimMode?
         var duration: SwiftMessages.Duration?
+        var backgroundColor: UIColor?
+        var foregroundColor: UIColor?
         var presentationStyle: SwiftMessages.PresentationStyle?
         var presentationContext: SwiftMessages.PresentationContext?
         func show(_ sender: Any? = nil) {
@@ -47,20 +49,23 @@ class App {
                     SwiftMessages.hide()
                 }
             )
-            switch theme {
-            case .info:
-                view.configureTheme(.info)
-            case .error:
-                view.configureTheme(.error)
-            case .success:
-                view.configureTheme(.success)
-            case .warning:
-                view.configureTheme(.warning)
-            /*default:
-                view.configureTheme(backgroundColor: UIColor.black, foregroundColor: UIColor.white)
-            */
-            }
             view.configureDropShadow()
+            var config = SwiftMessages.defaultConfig
+            if let backgroundColor = self.backgroundColor, let foregroundColor = self.foregroundColor {
+                view.configureTheme(backgroundColor: backgroundColor, foregroundColor: foregroundColor)
+                config.preferredStatusBarStyle = .lightContent
+            } else if let theme = self.theme {
+                switch theme {
+                case .info:
+                    view.configureTheme(.info)
+                case .error:
+                    view.configureTheme(.error)
+                case .success:
+                    view.configureTheme(.success)
+                case .warning:
+                    view.configureTheme(.warning)
+                }
+            }
             view.button?.isHidden = true
             view.iconLabel?.isHidden = true
             view.iconImageView?.isHidden = true
@@ -68,7 +73,6 @@ class App {
             if self.title == nil {
                 view.titleLabel?.isHidden = true
             }
-            var config = SwiftMessages.defaultConfig
             if let dimMode = self.dimMode {
                 config.dimMode = dimMode
             }
@@ -81,7 +85,7 @@ class App {
             if let presentationContext = self.presentationContext {
                 config.presentationContext = presentationContext
             }
-            if case .top = config.presentationStyle {
+            if case .top = config.presentationStyle, let theme = self.theme {
                 switch theme {
                 case .error, .success, .warning:
                     config.preferredStatusBarStyle = .lightContent
@@ -95,6 +99,7 @@ class App {
 }
 
 extension UIView {
+    
     func borderTopWith(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor

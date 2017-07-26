@@ -41,9 +41,10 @@ class ProcessoService: Service {
         return dataSet
     }
     
-    // TODO INFORMAR SE PRECISA AGUARDAR O ENVIO DAS IMAGENS
     static func enviar(id: Int) throws -> DataSet<ProcessoModel, ProcessoRegraModel> {
-        let url = "\(Config.restURL)/processo/enviar/\(id)/false"
+        let referencia = "\(id)"
+        let exists = try DigitalizacaoService.existsBy(referencia: referencia, tipo: .tipificacao, status: [.enviando, .aguardando])
+        let url = "\(Config.restURL)/processo/enviar/\(id)/\(exists)"
         let response: DataResponse<DataSet<ProcessoModel, ProcessoRegraModel>> = try Network.request(url, method: .get, encoding: JSONEncoding.default, headers: Device.headers).parse()
         let result = response.result
         if result.isFailure {
@@ -53,9 +54,10 @@ class ProcessoService: Service {
         return dataSet
     }
     
-    // TODO INFORMAR SE PRECISA AGUARDAR O ENVIO DAS IMAGENS
     static func reenviar(id: Int) throws -> DataSet<ProcessoModel, ProcessoRegraModel> {
-        let url = "\(Config.restURL)/processo/reenviar/\(id)/false"
+        let referencia = "\(id)"
+        let exists = try DigitalizacaoService.existsBy(referencia: referencia, tipo: .tipificacao, status: [.enviando, .aguardando])
+        let url = "\(Config.restURL)/processo/reenviar/\(id)/\(exists)"
         let response: DataResponse<DataSet<ProcessoModel, ProcessoRegraModel>> = try Network.request(url, method: .get, encoding: JSONEncoding.default, headers: Device.headers).parse()
         let result = response.result
         if result.isFailure {

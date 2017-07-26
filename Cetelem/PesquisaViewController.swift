@@ -109,6 +109,7 @@ extension PesquisaViewController: UITableViewDelegate {
         let model = rows[indexPath.row]
         let controller = UIStoryboard.viewController("Menu", identifier: "Scene.Processo.Detalhe") as! ProcessoDetalheViewController
         controller.id = model.id!
+        controller.isLeftMenu = false
         self.navigationController?.pushViewController(controller, animated: true)
     }
 }

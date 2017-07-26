@@ -10,7 +10,20 @@ import UIKit
 
 struct Color {
     // RED
-    static let red500 = UIColor(hex: "F44336")
+    static let red50 = UIColor(hex: "ffebee")
+    static let red100 = UIColor(hex: "ffcdd2")
+    static let red200 = UIColor(hex: "ef9a9a")
+    static let red300 = UIColor(hex: "e57373")
+    static let red400 = UIColor(hex: "ef5350")
+    static let red500 = UIColor(hex: "f44336")
+    static let red600 = UIColor(hex: "e53935")
+    static let red700 = UIColor(hex: "d32f2f")
+    static let red800 = UIColor(hex: "c62828")
+    static let red900 = UIColor(hex: "b71c1c")
+    static let redA100 = UIColor(hex: "ff8a80")
+    static let redA200 = UIColor(hex: "ff5252")
+    static let redA400 = UIColor(hex: "ff1744")
+    static let redA700 = UIColor(hex: "d50000")
     static let redPending = UIColor(hex: "A10005")
     // BLUE
     static let blue500 = UIColor(hex: "2196F3")

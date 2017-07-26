@@ -20,6 +20,23 @@
 "Processo.Status.cancelado" = "Cancelado";
 "Processo.Status.emProcessamento" = "Em Processamento";
 
+/* Documento Status */
+"Documento.Status.incluido" = "Incluído";
+"Documento.Status.pendente" = "Pendente";
+"Documento.Status.aprovado" = "Aprovado";
+"Documento.Status.processando" = "Processando";
+"Documento.Status.digitalizado" = "Digitalizado";
+
+/* Digitalizacao Tipo */
+"Digitalizacao.Tipo.documento" = "Documento";
+"Digitalizacao.Tipo.tipificacao" = "Tipificação";
+
+/* Digitalizacao Status */
+"Digitalizacao.Status.erro" = "Erro";
+"Digitalizacao.Status.enviado" = "Enviado";
+"Digitalizacao.Status.enviando" = "Enviando";
+"Digitalizacao.Status.aguardando" = "Aguardando";
+
 /* Menu */
 "Menu.Processo" = "Processo";
 "Menu.Novo" = "Novo";
@@ -32,6 +49,7 @@
 "Label.Sair" = "Sair";
 "Label.Sim" = "Sim";
 "Label.Nao" = "Não";
+"Label.Abrir" = "Abrir";
 "Label.Login" = "Login";
 "Label.Senha" = "Senha";
 "Label.Selecione" = "-- Selecione --";
@@ -59,3 +77,6 @@
 "Message.ProcessoSalvoSucesso" = "Processo salvo com sucesso";
 "Message.ProcessoEnviadoSucesso" = "Processo enviado com sucesso";
 "Message.ProcessoReenviadoSucesso" = "Processo reenviado com sucesso";
+"Message.ProcessoPendente" = "Existe uma pendência para este processo";
+"Message.SemInfoDigitalizacao" = "Não há informações de digitalização";
+"Message.ErroDigitalizacao" = "Erro na digitalização";

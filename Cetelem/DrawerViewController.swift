@@ -10,21 +10,25 @@ import UIKit
 
 class DrawerViewController: CetelemViewController {
     
-    @IBOutlet weak var drawerButton: UIBarButtonItem!
+    private var drawerButton: UIBarButtonItem!
     
-    var isMenuHidden: Bool {
-        return false
-    }
+    var isLeftMenu = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if drawerButton != nil {
+        prepareDrawer()
+    }
+    
+    fileprivate func prepareDrawer() {
+        if isLeftMenu {
             if let controller = revealViewController() {
-                view.addGestureRecognizer(controller.panGestureRecognizer())
-                view.addGestureRecognizer(controller.tapGestureRecognizer())
                 controller.delegate = self
+                drawerButton = UIBarButtonItem(image: Icon.menu, style: .plain, target: nil, action: nil)
                 drawerButton.target = controller
                 drawerButton.action = #selector(SWRevealViewController.revealToggle(_:))
+                navigationItem.setLeftBarButton(drawerButton, animated: true)
+                view.addGestureRecognizer(controller.panGestureRecognizer())
+                view.addGestureRecognizer(controller.tapGestureRecognizer())
             }
         }
     }
@@ -39,7 +43,6 @@ class DrawerViewController: CetelemViewController {
 }
 
 extension DrawerViewController: SWRevealViewControllerDelegate {
-    
     func revealController(_ revealController: SWRevealViewController!, willMoveTo position: FrontViewPosition) {
         
     }

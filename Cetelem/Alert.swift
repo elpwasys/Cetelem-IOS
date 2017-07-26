@@ -131,7 +131,7 @@ extension Alert {
         prepareNegativeButton()
         preparePositiveButton()
         ShadowUtils.applyBottom(topView)
-        ShadowUtils.applyTop(bottomView)
+        bottomView.borderTopWith(color: Color.grey300, width: 1)
     }
     
     fileprivate func preapareTitle() {

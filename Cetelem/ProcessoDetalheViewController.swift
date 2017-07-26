@@ -88,8 +88,16 @@ class ProcessoDetalheViewController: DrawerViewController {
         super.viewDidLoad()
         preapare()
         if let id = self.id {
-            startAsyncEditar(id: id)
+            startAsyncEditar(id)
         }
+    }
+    
+    @IBAction func onInfoTapped() {
+        verificarDigitalizacao()
+    }
+    
+    @IBAction func onImageTapped(_ sender: UIBarButtonItem) {
+        pushDocumentoListaViewController()
     }
 }
 
@@ -97,9 +105,9 @@ class ProcessoDetalheViewController: DrawerViewController {
 extension ProcessoDetalheViewController {
     
     fileprivate func preapare() {
-        prepareFloaty()
         prepareTopView()
         prepareTableView()
+        prepareFloatButtons()
     }
     
     fileprivate func prepareTopView() {
@@ -140,6 +148,20 @@ extension ProcessoDetalheViewController {
             statusImageView.image = processo.status.icon
             grupos = processo.gruposCampos ?? [CampoGrupoModel]()
             tableView.reloadData()
+            if processo.status != .pendente {
+                verificarErroDigitalizacao()
+            } else {
+                let action = MDCSnackbarMessageAction()
+                action.title = TextUtils.localized(forKey: "Label.Abrir")
+                action.handler = {() in
+                    self.pushDocumentoListaViewController()
+                }
+                let snackbar = MDCSnackbarMessage()
+                snackbar.text = TextUtils.localized(forKey: "Message.ProcessoPendente")
+                snackbar.action = action
+                snackbar.buttonTextColor = Color.accent
+                MDCSnackbarManager.show(snackbar)
+            }
         }
         if let regra = self.regra {
             salvarFloatButton.isHidden = !isEditable
@@ -155,16 +177,22 @@ extension ProcessoDetalheViewController {
         }
     }
     
-    fileprivate func prepareFloaty() {
+    fileprivate func pushDocumentoListaViewController() {
+        let controller = UIStoryboard.viewController("Menu", identifier: "Scene.Documento.Lista") as! DocumentoListaViewController
+        controller.id = id
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    fileprivate func prepareFloatButtons() {
         if menuFloatButton == nil {
             menuFloatButton = Floaty()
             menuFloatButton.isHidden = true
             menuFloatButton.plusColor = Color.white
             menuFloatButton.buttonColor = Color.red500
+            menuFloatButton.overlayColor = Color.white.withAlphaComponent(0.7)
             menuFloatButton.animationSpeed = 0.05
             // SALVAR
             salvarFloatButton = FloatyItem()
-            salvarFloatButton.isHidden = true
             salvarFloatButton.icon = Icon.saveWhite
             salvarFloatButton.buttonColor = Color.primary
             salvarFloatButton.title = TextUtils.localized(forKey: "Label.Salvar")
@@ -174,7 +202,6 @@ extension ProcessoDetalheViewController {
             menuFloatButton.addItem(item: salvarFloatButton)
             // ENVIAR
             enviarFloatButton = FloatyItem()
-            enviarFloatButton.isHidden = true
             enviarFloatButton.icon = Icon.sendWhite
             enviarFloatButton.buttonColor = Color.primary
             enviarFloatButton.title = TextUtils.localized(forKey: "Label.Enviar")
@@ -184,7 +211,6 @@ extension ProcessoDetalheViewController {
             menuFloatButton.addItem(item: enviarFloatButton)
             // REENVIAR
             reenviarFloatButton = FloatyItem()
-            reenviarFloatButton.isHidden = true
             reenviarFloatButton.icon = Icon.sendWhite
             reenviarFloatButton.buttonColor = Color.primary
             reenviarFloatButton.title = TextUtils.localized(forKey: "Label.Reenviar")
@@ -194,7 +220,6 @@ extension ProcessoDetalheViewController {
             menuFloatButton.addItem(item: reenviarFloatButton)
             // EDITAR
             editarFloatButton = FloatyItem()
-            editarFloatButton.isHidden = true
             editarFloatButton.icon = Icon.modeEditWhite
             editarFloatButton.buttonColor = Color.accent
             editarFloatButton.title = TextUtils.localized(forKey: "Label.Editar")
@@ -202,6 +227,12 @@ extension ProcessoDetalheViewController {
                 self.onEditarTapped()
             }
             menuFloatButton.addItem(item: editarFloatButton)
+            // COMMONS SETTINGS ITEMS
+            for item in menuFloatButton.items {
+                item.isHidden = true
+                item.titleColor = Color.black
+                item.titleShadowColor = Color.white.withAlphaComponent(0)
+            }
             self.view.addSubview(menuFloatButton)
         }
     }
@@ -268,13 +299,31 @@ extension ProcessoDetalheViewController {
     
     fileprivate func enviar() {
         if let id = self.id {
-            startAsyncEnviar(id: id)
+            startAsyncEnviar(id)
         }
     }
     
     fileprivate func reenviar() {
         if let id = self.id {
-            startAsyncReenviar(id: id)
+            startAsyncReenviar(id)
+        }
+    }
+    
+    fileprivate func digitalizar() {
+        if let id = self.id {
+            startAsyncDigitalizar(id)
+        }
+    }
+    
+    fileprivate func verificarDigitalizacao() {
+        if let id = self.id {
+            startAsyncVerificarDigitalizacao(id)
+        }
+    }
+    
+    fileprivate func verificarErroDigitalizacao() {
+        if let id = self.id {
+            startAsyncVerificarErroDigitalizacao(id)
         }
     }
 }
@@ -300,7 +349,6 @@ extension ProcessoDetalheViewController: UITableViewDelegate {
                 let count = opcoes?.components(separatedBy: ",").count ?? 0
                 height = RadioTableViewCell.height(count: count)
             }
-            
         }
         return height
     }
@@ -346,6 +394,11 @@ extension ProcessoDetalheViewController: UITableViewDataSource {
 // MARK: Asynchronous Completed Methods
 extension ProcessoDetalheViewController {
     
+    fileprivate func asyncDigitalizarCompleted() {
+        let content = TextUtils.localized(forKey: "Message.ProcessoEnviadoSucesso")
+        showMessage(content: content, theme: .success)
+    }
+    
     fileprivate func asyncSalvarCompleted(_ model: ProcessoModel) {
         processo = model
         let content = TextUtils.localized(forKey: "Message.ProcessoSalvoSucesso")
@@ -373,12 +426,49 @@ extension ProcessoDetalheViewController {
         let content = TextUtils.localized(forKey: "Message.ProcessoReenviadoSucesso")
         showMessage(content: content, theme: .success)
     }
+    
+    fileprivate func asyncVerificarErroDigitalizacaoCompleted(_ exists: Bool) {
+        if exists {
+            let action = MDCSnackbarMessageAction()
+            action.title = TextUtils.localized(forKey: "Label.Abrir")
+            action.handler = {() in
+                self.verificarDigitalizacao()
+            }
+            let snackbar = MDCSnackbarMessage()
+            snackbar.text = TextUtils.localized(forKey: "Message.ErroDigitalizacao")
+            snackbar.action = action
+            snackbar.buttonTextColor = Color.accent
+            MDCSnackbarManager.show(snackbar)
+        }
+    }
+    
+    fileprivate func asyncVerificarDigitalizacaoCompleted(_ model: DigitalizacaoModel?) {
+        digitalizacao = model
+        if let digitalizacao = self.digitalizacao {
+            let dialog = DigitalizacaoDialog.create(model: digitalizacao, view: revealViewController().view)
+            dialog.completionHandler = { answer in
+                dialog.hide()
+                if answer {
+                    self.digitalizar()
+                }
+            }
+            dialog.show()
+        } else {
+            let message = App.Message()
+            message.layout = .StatusLine
+            message.backgroundColor = Color.black
+            message.foregroundColor = Color.white
+            message.duration = .seconds(seconds: 1)
+            message.content = TextUtils.localized(forKey: "Message.SemInfoDigitalizacao")
+            message.show()
+        }
+    }
 }
 
 // MARK: Asynchronous Methods
 extension ProcessoDetalheViewController {
     
-    fileprivate func startAsyncEditar(id: Int) {
+    fileprivate func startAsyncEditar(_ id: Int) {
         self.showActivityIndicator()
         let observable = ProcessoService.Async.editar(id: id)
         prepare(for: observable)
@@ -396,7 +486,7 @@ extension ProcessoDetalheViewController {
             ).addDisposableTo(disposableBag)
     }
     
-    fileprivate func startAsyncEnviar(id: Int) {
+    fileprivate func startAsyncEnviar(_ id: Int) {
         self.showActivityIndicator()
         let observable = ProcessoService.Async.enviar(id: id)
         prepare(for: observable)
@@ -414,7 +504,7 @@ extension ProcessoDetalheViewController {
             ).addDisposableTo(disposableBag)
     }
     
-    fileprivate func startAsyncReenviar(id: Int) {
+    fileprivate func startAsyncReenviar(_ id: Int) {
         self.showActivityIndicator()
         let observable = ProcessoService.Async.reenviar(id: id)
         prepare(for: observable)
@@ -448,5 +538,44 @@ extension ProcessoDetalheViewController {
                     self.hideActivityIndicator()
                 }
             ).addDisposableTo(disposableBag)
+    }
+    
+    fileprivate func startAsyncDigitalizar(_ id: Int) {
+        let referencia = "\(id)"
+        let observable = DigitalizacaoService.Async.digitalizar(tipo: .tipificacao, referencia: referencia)
+        prepare(for: observable).subscribe(
+            onNext: {
+                self.asyncDigitalizarCompleted()
+            },
+            onError: { error in
+                self.handle(error)
+            }
+        ).addDisposableTo(disposableBag)
+    }
+    
+    fileprivate func startAsyncVerificarDigitalizacao(_ id: Int) {
+        let referencia = "\(id)"
+        let observable = DigitalizacaoService.Async.getBy(referencia: referencia, tipo: .tipificacao)
+        prepare(for: observable).subscribe(
+            onNext: { model in
+                self.asyncVerificarDigitalizacaoCompleted(model)
+            },
+            onError: { error in
+                self.handle(error)
+            }
+        ).addDisposableTo(disposableBag)
+    }
+    
+    fileprivate func startAsyncVerificarErroDigitalizacao(_ id: Int) {
+        let referencia = "\(id)"
+        let observable = DigitalizacaoService.Async.existsBy(referencia: referencia, tipo: .tipificacao, status: [.erro])
+        prepare(for: observable).subscribe(
+            onNext: { exists in
+                self.asyncVerificarErroDigitalizacaoCompleted(exists)
+            },
+            onError: { error in
+                self.handle(error)
+            }
+        ).addDisposableTo(disposableBag)
     }
 }
