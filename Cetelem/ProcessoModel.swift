@@ -81,5 +81,6 @@ class ProcessoModel: Model {
         status <- map["status"]
         dataCriacao <- (map["dataCriacao"], dateTransform)
         tipoProcesso <- map["tipoProcesso"]
+        gruposCampos <- map["gruposCampos"]
     }
 }

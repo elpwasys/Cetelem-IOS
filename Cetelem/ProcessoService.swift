@@ -41,6 +41,41 @@ class ProcessoService: Service {
         return dataSet
     }
     
+    // TODO INFORMAR SE PRECISA AGUARDAR O ENVIO DAS IMAGENS
+    static func enviar(id: Int) throws -> DataSet<ProcessoModel, ProcessoRegraModel> {
+        let url = "\(Config.restURL)/processo/enviar/\(id)/false"
+        let response: DataResponse<DataSet<ProcessoModel, ProcessoRegraModel>> = try Network.request(url, method: .get, encoding: JSONEncoding.default, headers: Device.headers).parse()
+        let result = response.result
+        if result.isFailure {
+            throw result.error!
+        }
+        let dataSet = result.value!
+        return dataSet
+    }
+    
+    // TODO INFORMAR SE PRECISA AGUARDAR O ENVIO DAS IMAGENS
+    static func reenviar(id: Int) throws -> DataSet<ProcessoModel, ProcessoRegraModel> {
+        let url = "\(Config.restURL)/processo/reenviar/\(id)/false"
+        let response: DataResponse<DataSet<ProcessoModel, ProcessoRegraModel>> = try Network.request(url, method: .get, encoding: JSONEncoding.default, headers: Device.headers).parse()
+        let result = response.result
+        if result.isFailure {
+            throw result.error!
+        }
+        let dataSet = result.value!
+        return dataSet
+    }
+    
+    static func editar(id: Int) throws -> DataSet<ProcessoModel, ProcessoRegraModel> {
+        let url = "\(Config.restURL)/processo/editar/\(id)"
+        let response: DataResponse<DataSet<ProcessoModel, ProcessoRegraModel>> = try Network.request(url, method: .get, encoding: JSONEncoding.default, headers: Device.headers).parse()
+        let result = response.result
+        if result.isFailure {
+            throw result.error!
+        }
+        let dataSet = result.value!
+        return dataSet
+    }
+    
     static func tipoDataSet(id: Int) throws -> DataSet<TipoProcessoModel, TipoProcessoMeta> {
         let url = "\(Config.restURL)/processo/tipo/dataset/\(id)"
         let response: DataResponse<DataSet<TipoProcessoModel, TipoProcessoMeta>> = try Network.request(url, method: .get, encoding: JSONEncoding.default, headers: Device.headers).parse()
@@ -59,6 +94,45 @@ class ProcessoService: Service {
                 do {
                     let model = try ProcessoService.salvar(model: model)
                     observer.onNext(model)
+                    observer.onCompleted()
+                } catch {
+                    observer.onError(error)
+                }
+                return Disposables.create()
+            }
+        }
+        
+        static func editar(id: Int) -> Observable<DataSet<ProcessoModel, ProcessoRegraModel>> {
+            return Observable.create { observer in
+                do {
+                    let dataSet = try ProcessoService.editar(id: id)
+                    observer.onNext(dataSet)
+                    observer.onCompleted()
+                } catch {
+                    observer.onError(error)
+                }
+                return Disposables.create()
+            }
+        }
+        
+        static func enviar(id: Int) -> Observable<DataSet<ProcessoModel, ProcessoRegraModel>> {
+            return Observable.create { observer in
+                do {
+                    let dataSet = try ProcessoService.enviar(id: id)
+                    observer.onNext(dataSet)
+                    observer.onCompleted()
+                } catch {
+                    observer.onError(error)
+                }
+                return Disposables.create()
+            }
+        }
+        
+        static func reenviar(id: Int) -> Observable<DataSet<ProcessoModel, ProcessoRegraModel>> {
+            return Observable.create { observer in
+                do {
+                    let dataSet = try ProcessoService.reenviar(id: id)
+                    observer.onNext(dataSet)
                     observer.onCompleted()
                 } catch {
                     observer.onError(error)

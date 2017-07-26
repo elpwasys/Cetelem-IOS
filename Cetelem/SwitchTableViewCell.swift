@@ -15,6 +15,12 @@ class SwitchTableViewCell: CampoTableViewCell {
     
     fileprivate var campo: CampoModel?
     
+    override var isEnabled: Bool {
+        didSet {
+            control.isEnabled = isEnabled
+        }
+    }
+    
     override var value: String? {
         if let model = self.campo {
             if let opcoes = model.opcoes?.components(separatedBy: ","), opcoes.count == 2 {
@@ -50,7 +56,12 @@ class SwitchTableViewCell: CampoTableViewCell {
         self.campo = model
         ViewUtils.text(TextUtils.capitalize(model.nome), for: label)
         label.textColor = Color.grey500
-        control.isOn = false
+        control.isEnabled = isEnabled
+        var isOn = false
+        if let valor = model.valor {
+            isOn = valor.range(of: "(?i)sim", options: .regularExpression) != nil
+        }
+        control.isOn = isOn
     }
 }
 

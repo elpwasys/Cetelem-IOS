@@ -20,7 +20,7 @@ class App {
         var duration: SwiftMessages.Duration?
         var presentationStyle: SwiftMessages.PresentationStyle?
         var presentationContext: SwiftMessages.PresentationContext?
-        func show(_ sender: Any) {
+        func show(_ sender: Any? = nil) {
             let view: MessageView
             if let layout = self.layout {
                 switch layout {

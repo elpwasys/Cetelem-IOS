@@ -18,6 +18,8 @@ class CampoTableViewCell: UITableViewCell {
         return true
     }
     
+    var isEnabled = true
+    
     var detailColor: UIColor {
         return Color.grey400
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import SwiftMessages
 import MaterialComponents
 
 class AppViewController: UIViewController {
@@ -37,20 +38,35 @@ class AppViewController: UIViewController {
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
     }
     
+    func showMessage(
+        content: String,
+        theme: Theme = .info,
+        dimMode: SwiftMessages.DimMode = .gray(interactive: true),
+        duration: SwiftMessages.Duration = .forever,
+        presentationStyle: SwiftMessages.PresentationStyle = .bottom) {
+        let message = App.Message()
+        message.theme = theme
+        message.dimMode = dimMode
+        message.duration = duration
+        message.presentationStyle = presentationStyle
+        message.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+        message.content = content
+        message.show()
+    }
+    
     func handle(_ error: Error) {
         let message = App.Message()
         message.theme = .error
+        message.dimMode = .gray(interactive: true)
         if error is Trouble {
             let trouble = error as! Trouble
             message.content = trouble.description
             switch trouble {
             case .any(_ ):
-                message.dimMode = .gray(interactive: true)
                 message.duration = .forever
                 message.presentationStyle = .bottom
                 message.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
             case .server(_ , _):
-                message.dimMode = .gray(interactive: true)
                 message.duration = .forever
                 message.presentationStyle = .bottom
                 message.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
@@ -59,7 +75,6 @@ class AppViewController: UIViewController {
                 message.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
             }
         } else {
-            message.dimMode = .gray(interactive: true)
             message.duration = .forever
             message.presentationStyle = .bottom
             message.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
@@ -84,14 +99,7 @@ class AppViewController: UIViewController {
     }
     
     func showActivityIndicator() {
-        var view: UIView?
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            view = delegate.window?.subviews.first
-        }
-        if view == nil {
-            view = self.view
-        }
-        App.Loading.shared.show(view: view!)
+        App.Loading.shared.show(view: self.view)
     }
     
     func hideActivityIndicator() {

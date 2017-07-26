@@ -38,6 +38,10 @@
 "Label.Opcionais" = "Opcionais";
 "Label.Obrigatorios" = "Obrigatórios";
 "Label.CampoObrigatorio" = "é obrigatório";
+"Label.Editar" = "Editar";
+"Label.Enviar" = "Enviar";
+"Label.Reenviar" = "Reenviar";
+"Label.Salvar" = "Salvar";
 
 /* Message */
 "Message.CampoInvalidoMinLength" = "o tamanho mínimo é";
@@ -49,3 +53,9 @@
 "Message.SairAplicativo" = "Deseja sair do aplicativo?";
 "Message.SemRegistrosExibir" = "Sem registros para exibir";
 "Message.FormularioInvalido" = "Verifique os campos inválidos ou obrigatórios!";
+"Message.EditarProcesso" = "Os documentos terão de ser analisados novamente.\nTem certeza que deseja prosseguir?";
+"Message.EnviarProcesso" = "Deseja enviar este processo?";
+"Message.ReenviarProcesso" = "Deseja reenviar este processo?";
+"Message.ProcessoSalvoSucesso" = "Processo salvo com sucesso";
+"Message.ProcessoEnviadoSucesso" = "Processo enviado com sucesso";
+"Message.ProcessoReenviadoSucesso" = "Processo reenviado com sucesso";

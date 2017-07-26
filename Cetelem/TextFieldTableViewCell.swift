@@ -18,6 +18,14 @@ class TextFieldTableViewCell: CampoTableViewCell {
         return textField.text
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            if textField != nil {
+                textField.isEnabled = isEnabled
+            }
+        }
+    }
+    
     override var isValid: Bool {
         if let campo = self.campo, let name = TextUtils.capitalize(campo.nome) {
             let value = textField.text
@@ -59,6 +67,7 @@ class TextFieldTableViewCell: CampoTableViewCell {
     override func prepare(_ model: CampoModel) {
         self.clear()
         self.campo = model
+        textField.isEnabled = isEnabled
         textField.placeholder = TextUtils.capitalize(model.nome)
         ViewUtils.text(model.valor, for: textField)
         if model.tipo == .inteiro {

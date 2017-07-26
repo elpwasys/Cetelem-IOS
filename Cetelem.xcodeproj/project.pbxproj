@@ -39,6 +39,12 @@
 		EED57F991F270E3600A48837 /* DigitalizacaoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F981F270E3600A48837 /* DigitalizacaoService.swift */; };
 		EED57F9B1F27137C00A48837 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F9A1F27137C00A48837 /* RealmService.swift */; };
 		EED57F9F1F27407D00A48837 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57F9E1F27407D00A48837 /* ResultModel.swift */; };
+		EED57FA11F27CAF900A48837 /* ProcessoDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57FA01F27CAF900A48837 /* ProcessoDetalheViewController.swift */; };
+		EED57FA31F27D22000A48837 /* ProcessoRegraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57FA21F27D22000A48837 /* ProcessoRegraModel.swift */; };
+		EED57FA61F27EDFE00A48837 /* AlertDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57FA51F27EDFE00A48837 /* AlertDialogViewController.swift */; };
+		EED57FA91F27F62B00A48837 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57FA81F27F62B00A48837 /* Alert.swift */; };
+		EED57FAB1F27F81000A48837 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED57FAA1F27F81000A48837 /* View.swift */; };
+		EED57FAD1F27F8C800A48837 /* Alert.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED57FAC1F27F8C800A48837 /* Alert.xib */; };
 		EEDCC5CC1F243BE700CE5C8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */; };
 		EEDCC5D11F243BE700CE5C8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC5CF1F243BE700CE5C8A /* Main.storyboard */; };
 		EEDCC5D31F243BE700CE5C8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC5D21F243BE700CE5C8A /* Assets.xcassets */; };
@@ -128,6 +134,12 @@
 		EED57F981F270E3600A48837 /* DigitalizacaoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalizacaoService.swift; sourceTree = "<group>"; };
 		EED57F9A1F27137C00A48837 /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		EED57F9E1F27407D00A48837 /* ResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		EED57FA01F27CAF900A48837 /* ProcessoDetalheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessoDetalheViewController.swift; sourceTree = "<group>"; };
+		EED57FA21F27D22000A48837 /* ProcessoRegraModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessoRegraModel.swift; sourceTree = "<group>"; };
+		EED57FA51F27EDFE00A48837 /* AlertDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDialogViewController.swift; sourceTree = "<group>"; };
+		EED57FA81F27F62B00A48837 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		EED57FAA1F27F81000A48837 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		EED57FAC1F27F8C800A48837 /* Alert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Alert.xib; sourceTree = "<group>"; };
 		EEDCC5C81F243BE700CE5C8A /* Cetelem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cetelem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEDCC5D01F243BE700CE5C8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -260,6 +272,15 @@
 			name = Realm;
 			sourceTree = "<group>";
 		};
+		EED57FA71F27F5F200A48837 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				EED57FA81F27F62B00A48837 /* Alert.swift */,
+				EED57FAC1F27F8C800A48837 /* Alert.xib */,
+			);
+			name = Dialog;
+			sourceTree = "<group>";
+		};
 		EEDCC5BF1F243BE700CE5C8A = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +320,7 @@
 		EEDCC5DD1F243D0A00CE5C8A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EED57FA71F27F5F200A48837 /* Dialog */,
 				EED57F8F1F27052100A48837 /* Realm */,
 				EEDCC64E1F243ECC00CE5C8A /* Cetelem.swift */,
 				EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */,
@@ -338,6 +360,7 @@
 				EED57F8D1F26FF1400A48837 /* UploadModel.swift */,
 				EED57F941F27082800A48837 /* ArquivoModel.swift */,
 				EED57F961F270A0900A48837 /* DigitalizacaoModel.swift */,
+				EED57FA21F27D22000A48837 /* ProcessoRegraModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -389,6 +412,7 @@
 				EEDCC6141F243E2400CE5C8A /* PickerField.swift */,
 				EEDCC6151F243E2400CE5C8A /* MaterialTextField.swift */,
 				EEDCC6161F243E2400CE5C8A /* Label.swift */,
+				EED57FAA1F27F81000A48837 /* View.swift */,
 				EE37388D1F259F8400A1FE70 /* RoundButton.swift */,
 			);
 			name = Widget;
@@ -444,6 +468,8 @@
 				EE3738981F25AFAD00A1FE70 /* PesquisaViewController.swift */,
 				EE37387B1F2515C600A1FE70 /* NovoViewController.swift */,
 				EE37388F1F25AAFA00A1FE70 /* DocumentoDialogViewController.swift */,
+				EED57FA01F27CAF900A48837 /* ProcessoDetalheViewController.swift */,
+				EED57FA51F27EDFE00A48837 /* AlertDialogViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -559,6 +585,7 @@
 				EEDCC6541F2447BB00CE5C8A /* config.plist in Resources */,
 				EE37385C1F250FD900A1FE70 /* RadioTableViewCell.xib in Resources */,
 				EEDCC6551F2447BB00CE5C8A /* Localizable.strings in Resources */,
+				EED57FAD1F27F8C800A48837 /* Alert.xib in Resources */,
 				EE37387A1F25157200A1FE70 /* TableHeaderView.xib in Resources */,
 				EEDCC5D31F243BE700CE5C8A /* Assets.xcassets in Resources */,
 				EE3738681F2514E800A1FE70 /* snap-check.png in Resources */,
@@ -635,9 +662,12 @@
 				EEDCC62B1F243E2D00CE5C8A /* Network.swift in Sources */,
 				EEDCC6411F243E9B00CE5C8A /* ImageService.swift in Sources */,
 				EEDCC65B1F2450BB00CE5C8A /* CampoTableViewCell.swift in Sources */,
+				EED57FA11F27CAF900A48837 /* ProcessoDetalheViewController.swift in Sources */,
 				EEDCC6281F243E2D00CE5C8A /* AppViewController.swift in Sources */,
 				EEDCC6271F243E2D00CE5C8A /* Service.swift in Sources */,
+				EED57FA61F27EDFE00A48837 /* AlertDialogViewController.swift in Sources */,
 				EEDCC6481F243EA800CE5C8A /* StartViewController.swift in Sources */,
+				EED57FA31F27D22000A48837 /* ProcessoRegraModel.swift in Sources */,
 				EEDCC6251F243E2D00CE5C8A /* Color.swift in Sources */,
 				EEDCC60C1F243E0B00CE5C8A /* DateUtils.swift in Sources */,
 				EEDCC6191F243E2400CE5C8A /* MaterialTextField.swift in Sources */,
@@ -646,6 +676,7 @@
 				EE3738911F25AAFA00A1FE70 /* DocumentoDialogViewController.swift in Sources */,
 				EEDCC6261F243E2D00CE5C8A /* Icon.swift in Sources */,
 				EEDCC64D1F243EA800CE5C8A /* MenuViewController.swift in Sources */,
+				EED57FA91F27F62B00A48837 /* Alert.swift in Sources */,
 				EEDCC61A1F243E2400CE5C8A /* Label.swift in Sources */,
 				EEDCC6101F243E0B00CE5C8A /* ShadowUtils.swift in Sources */,
 				EEDCC5F11F243DA300CE5C8A /* CampoModel.swift in Sources */,
@@ -653,6 +684,7 @@
 				EEDCC6171F243E2400CE5C8A /* DateField.swift in Sources */,
 				EED57F971F270A0900A48837 /* DigitalizacaoModel.swift in Sources */,
 				EED57F991F270E3600A48837 /* DigitalizacaoService.swift in Sources */,
+				EED57FAB1F27F81000A48837 /* View.swift in Sources */,
 				EEDCC5EF1F243DA300CE5C8A /* PesquisaModel.swift in Sources */,
 				EEDCC5ED1F243DA300CE5C8A /* PagingModel.swift in Sources */,
 				EEDCC6401F243E9B00CE5C8A /* ProcessoService.swift in Sources */,

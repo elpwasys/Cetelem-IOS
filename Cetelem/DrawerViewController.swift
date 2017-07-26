@@ -12,6 +12,10 @@ class DrawerViewController: CetelemViewController {
     
     @IBOutlet weak var drawerButton: UIBarButtonItem!
     
+    var isMenuHidden: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if drawerButton != nil {
@@ -22,6 +26,14 @@ class DrawerViewController: CetelemViewController {
                 drawerButton.target = controller
                 drawerButton.action = #selector(SWRevealViewController.revealToggle(_:))
             }
+        }
+    }
+    
+    override func showActivityIndicator() {
+        if let controller = revealViewController() {
+            App.Loading.shared.show(view: controller.view)
+        } else {
+            super.showActivityIndicator()
         }
     }
 }

@@ -16,6 +16,16 @@ class RadioTableViewCell: CampoTableViewCell {
     
     fileprivate var campo: CampoModel?
     
+    override var isEnabled: Bool {
+        didSet {
+            for view in radioGroupView.subviews {
+                if let radio = view as? RadioButton {
+                    radio.isEnabled = isEnabled
+                }
+            }
+        }
+    }
+    
     override var value: String? {
         guard let campo = self.campo else {
             return nil
@@ -73,7 +83,11 @@ class RadioTableViewCell: CampoTableViewCell {
                 // RADIO
                 let radio = RadioButton(frame: CGRect(x: 0, y: y, width: size, height: size))
                 radio.tag = index
+                radio.isEnabled = isEnabled
                 radio.outerCircleColor = Color.grey500
+                if let valor = model.valor {
+                    radio.isSelected = (valor == opcao)
+                }
                 radio.addTarget(self, action: #selector(onRadioSelected(_:)), for: .touchUpInside)
                 radioGroupView.addSubview(radio)
                 // LABEL

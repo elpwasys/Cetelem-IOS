@@ -21,6 +21,15 @@ class MaterialTextField: UITextField {
         }
     }
     
+    override var text: String? {
+        didSet {
+            if TextUtils.isNotBlank(text) {
+                topLabel.text = placeholder
+                topLabel.textColor = labelNormalColor
+            }
+        }
+    }
+    
     fileprivate var width: CGFloat {
         return self.frame.width
     }

@@ -10,7 +10,7 @@ import UIKit
 
 struct Icon {
     static func icon(_ named: String) -> UIImage? {
-        return UIImage(named: named)?.withRenderingMode(.alwaysTemplate)
+        return UIImage(named: named)/*?.withRenderingMode(.alwaysTemplate)*/
     }
     static let add = icon("ic_add")
     static let menu = icon("ic_menu")
@@ -24,4 +24,8 @@ struct Icon {
     static let powerSettingsNew = icon("ic_power_settings_new")
     static let keyboardArrowLeft = icon("ic_keyboard_arrow_left")
     static let keyboardArrowRight = icon("ic_keyboard_arrow_right")
+    static let modeEditWhite = icon("ic_mode_edit_white")
+    static let sendWhite = icon("ic_send_white")
+    static let saveWhite = icon("ic_save_white")
+    static let collectionsWhite = icon("ic_collections_white")
 }

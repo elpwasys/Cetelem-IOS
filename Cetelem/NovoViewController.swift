@@ -129,10 +129,10 @@ extension NovoViewController {
     
     fileprivate func presentDocumentViewController() {
         var models = [TipoDocumentoModel]()
-        let dialogTransitionController = MDCDialogTransitionController()
         if let documentos = tipoDataSet?.meta?.tiposDocumentos {
             models = documentos
         }
+        let dialogTransitionController = MDCDialogTransitionController()
         let controller = UIStoryboard.viewController("Menu", identifier: "Scene.Dialog.Documento") as! DocumentoDialogViewController
         controller.models = models
         controller.delegate = self
