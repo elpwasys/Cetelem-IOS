@@ -101,8 +101,8 @@ extension PesquisaViewController {
     }
     
     fileprivate func openFiltroDialog() {
-        let dialog = FiltroDialog.create(view: revealViewController().view)
-        dialog.show()
+        //let dialog = FiltroDialog.create(view: revealViewController().view)
+        //dialog.show()
     }
 }
 

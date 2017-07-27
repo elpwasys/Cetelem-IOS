@@ -528,7 +528,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqK-Db-0g6" customClass="RoundButton" customModule="Cetelem" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqK-Db-0g6" customClass="RoundButton" customModule="Cetelem" customModuleProvider="target">
                                 <rect key="frame" x="303" y="595" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="80l-GZ-KW7"/>
@@ -546,8 +546,11 @@
                                         <color key="value" red="0.28025132419999998" green="0.69198763370000005" blue="0.29347819089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onEnviarTapped" destination="rJI-lb-8Mg" eventType="touchUpInside" id="6fC-mC-ZrL"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yo-Mc-yaW" customClass="RoundButton" customModule="Cetelem" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yo-Mc-yaW" customClass="RoundButton" customModule="Cetelem" customModuleProvider="target">
                                 <rect key="frame" x="303" y="595" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="29I-KQ-dSg"/>
@@ -565,6 +568,9 @@
                                         <color key="value" red="0.28025132419999998" green="0.69198763370000005" blue="0.29347819089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onReenviarTapped" destination="rJI-lb-8Mg" eventType="touchUpInside" id="vPd-RF-HL5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -586,7 +592,7 @@
                                     <action selector="onRefreshTapped:" destination="rJI-lb-8Mg" id="PIr-6C-il5"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="ic_camera" id="Jqj-vf-xjI">
+                            <barButtonItem enabled="NO" image="ic_camera" id="Jqj-vf-xjI">
                                 <connections>
                                     <action selector="onCameraTapped:" destination="rJI-lb-8Mg" id="wtd-Sb-MHB"/>
                                 </connections>

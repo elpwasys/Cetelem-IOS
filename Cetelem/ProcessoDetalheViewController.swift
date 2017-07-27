@@ -87,6 +87,10 @@ class ProcessoDetalheViewController: DrawerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         preapare()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let id = self.id {
             startAsyncEditar(id)
         }

@@ -37,6 +37,32 @@ class DocumentoListaViewController: CetelemViewController {
             super.showActivityIndicator()
         }
     }
+    
+    @IBAction func onEnviarTapped() {
+        let alert = Alert.create(view: revealViewController().view)
+        alert.title = TextUtils.localized(forKey: "Label.Enviar")
+        alert.message = TextUtils.localized(forKey: "Message.EnviarProcesso")
+        alert.completionHandler = { answer in
+            alert.hide()
+            if answer {
+                self.enviar()
+            }
+        }
+        alert.show()
+    }
+    
+    @IBAction func onReenviarTapped() {
+        let alert = Alert.create(view: revealViewController().view)
+        alert.title = TextUtils.localized(forKey: "Label.Reenviar")
+        alert.message = TextUtils.localized(forKey: "Message.ReenviarProcesso")
+        alert.completionHandler = { answer in
+            alert.hide()
+            if answer {
+                self.reenviar()
+            }
+        }
+        alert.show()
+    }
 
     @IBAction func onCameraTapped(_ sender: UIBarButtonItem) {
         presentSnapViewController()
@@ -80,7 +106,25 @@ extension DocumentoListaViewController {
     }
     
     fileprivate func salvar() {
-        
+        if !paths.isEmpty, let id = self.id {
+            var uploads = [UploadModel]()
+            for path in paths {
+                uploads.append(UploadModel(path))
+            }
+            startAsyncCriar(id, uploads)
+        }
+    }
+    
+    fileprivate func enviar() {
+        if let id = self.id {
+            self.startAsyncEnviar(id)
+        }
+    }
+    
+    fileprivate func reenviar() {
+        if let id = self.id {
+            self.startAsyncReenviar(id)
+        }
     }
     
     fileprivate func carregar() {
@@ -90,8 +134,27 @@ extension DocumentoListaViewController {
     }
     
     fileprivate func popular(_ dataSet: ArrayDataSet<DocumentoModel, DocumentoMeta>) {
+        
+        cameraButton.isEnabled = false
+        
+        enviarButton.isHidden = true
+        reenviarButton.isHidden = true
+        
+        if let meta = dataSet.meta {
+            if let regra = meta.regra {
+                cameraButton.isEnabled = regra.podeDigitalizar
+                if (regra.podeEnviar && !regra.hasAnyPendencia()) {
+                    enviarButton.isHidden = false
+                }
+                if (regra.podeResponderPendencia && !regra.hasAnyPendencia()) {
+                    reenviarButton.isHidden = false
+                }
+            }
+        }
+        
         opcionais.removeAll()
         obrigatorios.removeAll()
+        
         if let documentos = dataSet.data {
             for documento in documentos {
                 if documento.obrigatorio {
@@ -192,14 +255,6 @@ extension DocumentoListaViewController: UITableViewDataSource {
     }
 }
 
-// MARK: Asynchronous Completed Methods
-extension DocumentoListaViewController {
-    
-    fileprivate func asyncDataSetCompleted(_ dataSet: ArrayDataSet<DocumentoModel, DocumentoMeta>) {
-        popular(dataSet)
-    }
-}
-
 extension DocumentoListaViewController: DocumentoTableViewCellDelegate {
     
     func onJustificarTapped(cell: DocumentoTableViewCell) {
@@ -217,24 +272,105 @@ extension DocumentoListaViewController: DocumentoTableViewCellDelegate {
     }
 }
 
+// MARK: Asynchronous Completed Methods
+extension DocumentoListaViewController {
+    
+    fileprivate func asyncCriarCompleted(_ model: DigitalizacaoModel) {
+        do {
+            try DigitalizacaoService.digitalizar(tipo: .tipificacao, referencia: model.referencia)
+            let content = TextUtils.localized(forKey: "Message.ProcessoSalvoSucesso")
+            showMessage(content: content, theme: .success)
+        } catch {
+            handle(error)
+        }
+    }
+    
+    fileprivate func asyncDataSetCompleted(_ dataSet: ArrayDataSet<DocumentoModel, DocumentoMeta>) {
+        popular(dataSet)
+    }
+    
+    fileprivate func asyncEnviarCompleted(_ dataSet: ArrayDataSet<DocumentoModel, DocumentoMeta>) {
+        popular(dataSet)
+        let content = TextUtils.localized(forKey: "Message.ProcessoEnviadoSucesso")
+        showMessage(content: content, theme: .success)
+    }
+    
+    fileprivate func asyncReenviarCompleted(_ dataSet: ArrayDataSet<DocumentoModel, DocumentoMeta>) {
+        popular(dataSet)
+        let content = TextUtils.localized(forKey: "Message.ProcessoReenviadoSucesso")
+        showMessage(content: content, theme: .success)
+    }
+}
+
 // MARK: Asynchronous Methods
 extension DocumentoListaViewController {
     
     fileprivate func startAsyncDataSet(_ id: Int) {
         self.showActivityIndicator()
         let observable = DocumentoService.Async.dataSet(id: id)
-        prepare(for: observable)
-            .subscribe(
-                onNext: { dataSet in
-                    self.asyncDataSetCompleted(dataSet)
-                },
-                onError: { error in
-                    self.hideActivityIndicator()
-                    self.handle(error)
-                },
-                onCompleted: {
-                    self.hideActivityIndicator()
-                }
-            ).addDisposableTo(disposableBag)
+        prepare(for: observable).subscribe(
+            onNext: { dataSet in
+                self.asyncDataSetCompleted(dataSet)
+            },
+            onError: { error in
+                self.hideActivityIndicator()
+                self.handle(error)
+            },
+            onCompleted: {
+                self.hideActivityIndicator()
+            }
+        ).addDisposableTo(disposableBag)
+    }
+    
+    fileprivate func startAsyncEnviar(_ id: Int) {
+        self.showActivityIndicator()
+        let observable = DocumentoService.Async.enviar(id: id)
+        prepare(for: observable).subscribe(
+            onNext: { dataSet in
+                self.asyncEnviarCompleted(dataSet)
+            },
+            onError: { error in
+                self.hideActivityIndicator()
+                self.handle(error)
+            },
+            onCompleted: {
+                self.hideActivityIndicator()
+            }
+        ).addDisposableTo(disposableBag)
+    }
+    
+    fileprivate func startAsyncReenviar(_ id: Int) {
+        self.showActivityIndicator()
+        let observable = DocumentoService.Async.reenviar(id: id)
+        prepare(for: observable).subscribe(
+            onNext: { dataSet in
+                self.asyncReenviarCompleted(dataSet)
+            },
+            onError: { error in
+                self.hideActivityIndicator()
+                self.handle(error)
+            },
+            onCompleted: {
+                self.hideActivityIndicator()
+            }
+        ).addDisposableTo(disposableBag)
+    }
+    
+    fileprivate func startAsyncCriar(_ id: Int, _ uploads: [UploadModel]) {
+        self.showActivityIndicator()
+        let referencia = "\(id)"
+        let observable = DigitalizacaoService.Async.criar(referencia: referencia, tipo: .tipificacao, uploads: uploads)
+        prepare(for: observable).subscribe(
+            onNext: { model in
+                self.asyncCriarCompleted(model)
+            },
+            onError: { error in
+                self.hideActivityIndicator()
+                self.handle(error)
+            },
+            onCompleted: {
+                self.hideActivityIndicator()
+            }
+        ).addDisposableTo(disposableBag)
     }
 }

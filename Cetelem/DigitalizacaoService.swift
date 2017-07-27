@@ -41,12 +41,12 @@ class DigitalizacaoService: Service {
         return nil
     }
     
-    static func criar(referencia: String, tipo: DigitalizacaoModel.Tipo, uploads: [UploadModel]) throws {
-        if !uploads.isEmpty {
-            let realm = try Realm()
-            // REGISTRO DE DIGITALIZACAO
-            let predicate = NSPredicate(format: "referencia = %@ and tipo = %@", referencia, tipo.rawValue)
-            var digitalizacao = realm.objects(Digitalizacao.self).filter(predicate).first
+    static func criar(referencia: String, tipo: DigitalizacaoModel.Tipo, uploads: [UploadModel]) throws -> DigitalizacaoModel {
+        let realm = try Realm()
+        // REGISTRO DE DIGITALIZACAO
+        let predicate = NSPredicate(format: "referencia = %@ and tipo = %@", referencia, tipo.rawValue)
+        var digitalizacao = realm.objects(Digitalizacao.self).filter(predicate).first
+        try realm.write {
             if digitalizacao != nil {
                 let status = DigitalizacaoModel.Status(rawValue: digitalizacao!.status)
                 if status == .enviando {
@@ -80,16 +80,16 @@ class DigitalizacaoService: Service {
                     paths[upload.path] = path
                 }
             }
-            try realm.write {
-                realm.add(digitalizacao!, update: true)
-                // MOVE O ARQUIVO
-                for (key, value) in paths {
-                    let origin = URL(fileURLWithPath: key)
-                    let destination = URL(fileURLWithPath: value)
-                    try ImageService.move(origin: origin, destination: destination)
-                }
+            realm.add(digitalizacao!, update: true)
+            // MOVE O ARQUIVO
+            for (key, value) in paths {
+                let origin = URL(fileURLWithPath: key)
+                let destination = URL(fileURLWithPath: value)
+                try ImageService.move(origin: origin, destination: destination)
             }
         }
+        let model = DigitalizacaoModel.from(digitalizacao!)
+        return model
     }
     
     static func digitalizar(tipo: DigitalizacaoModel.Tipo, referencia: String) throws {
@@ -103,16 +103,18 @@ class DigitalizacaoService: Service {
             try update(id: model.id, status: .enviando)
             // FAZ O UPLOAD DAS IMAGENS
             try upload(tipo: tipo, referencia: referencia, arquivos: arquivos) { (success, error) in
-                if success {
-                    do {
-                        try delete(id: model.id)
-                        try update(id: model.id, status: .enviado)
-                        print("Sucesso na digitalizacao \(referencia)...")
-                    } catch {
-                        update(id: model.id, referencia: referencia, error: error)
+                DispatchQueue.global(qos: .background).async {
+                    if success {
+                        do {
+                            try delete(id: model.id)
+                            try update(id: model.id, status: .enviado)
+                            print("Sucesso na digitalizacao \(referencia)...")
+                        } catch {
+                            update(id: model.id, referencia: referencia, error: error)
+                        }
+                    } else {
+                        update(id: model.id, referencia: referencia, error: error!)
                     }
-                } else {
-                    update(id: model.id, referencia: referencia, error: error!)
                 }
             }
         }
@@ -204,9 +206,9 @@ class DigitalizacaoService: Service {
     
     private static func upload(tipo: DigitalizacaoModel.Tipo, referencia: String, arquivos: [ArquivoModel], completion: @escaping (Bool, Error?) -> Void) throws {
         print("Iniciando o upload dos arquivos da digitalizacao \(referencia)....")
+        var urls = [URL]()
         if !arquivos.isEmpty {
             print("Listando imagens para enviar...")
-            var urls = [URL]()
             for arquivo in arquivos {
                 let path = arquivo.caminho
                 if FileManager.default.fileExists(atPath: path) {
@@ -217,51 +219,64 @@ class DigitalizacaoService: Service {
                     print("Imagem '\(path)' nao encontrada!")
                 }
             }
-            if urls.isEmpty {
-                completion(true, nil)
-            } else {
-                let url = "\(Config.restURL)/digitalizacao/digitalizar/\(tipo.rawValue.lowercased())/\(referencia)"
-                try Network.upload(
-                    multipartFormData: { multipart in
-                        for url in urls {
-                            multipart.append(url, withName: "files")
-                        }
-                    },
-                    to: url,
-                    method: .post,
-                    headers: Device.headers,
-                    encodingCompletion: { encondingResult in
-                        print("Extraindo resultado da codificacao do multipart...")
-                        switch encondingResult {
-                        case .success(let request,  _, _):
-                            print("Enviando imagens...")
-                            request.parse(handler: {(response: DataResponse<ResultModel>) in
-                                print("Extraindo resposta...")
-                                if response.result.isSuccess {
-                                    let model = response.result.value!
-                                    if model.isSuccess {
-                                        print("Sucesso no envio das imagens.")
-                                        completion(true, nil)
-                                    } else {
-                                        print("Erro no envio das imagens.")
-                                        completion(false, Trouble.any(model.message ?? "Erro no servidor!"))
-                                    }
-                                } else {
-                                    print("Falha no envio das imagens.")
-                                    completion(false, Trouble.any("Falha no resultado da resposta!"))
-                                }
-                            })
-                        case .failure(let error):
-                            print("Falha na codificacao das imagens.")
-                            completion(false, error)
-                        }
+        }
+        if urls.isEmpty {
+            completion(true, nil)
+        } else {
+            let url = "\(Config.restURL)/digitalizacao/digitalizar/\(tipo.rawValue.lowercased())/\(referencia)"
+            try Network.upload(
+                multipartFormData: { multipart in
+                    for url in urls {
+                        multipart.append(url, withName: "files")
                     }
-                )
-            }
+                },
+                to: url,
+                method: .post,
+                headers: Device.headers,
+                encodingCompletion: { encondingResult in
+                    print("Extraindo resultado da codificacao do multipart...")
+                    switch encondingResult {
+                    case .success(let request,  _, _):
+                        print("Enviando imagens...")
+                        request.parse(handler: {(response: DataResponse<ResultModel>) in
+                            print("Extraindo resposta...")
+                            if response.result.isSuccess {
+                                let model = response.result.value!
+                                if model.isSuccess {
+                                    print("Sucesso no envio das imagens.")
+                                    completion(true, nil)
+                                } else {
+                                    print("Erro no envio das imagens.")
+                                    completion(false, Trouble.any(model.message ?? "Erro no servidor!"))
+                                }
+                            } else {
+                                print("Falha no envio das imagens.")
+                                completion(false, Trouble.any("Falha no resultado da resposta!"))
+                            }
+                        })
+                    case .failure(let error):
+                        print("Falha na codificacao das imagens.")
+                        completion(false, error)
+                    }
+                }
+            )
         }
     }
     
     class Async {
+        
+        static func criar(referencia: String, tipo: DigitalizacaoModel.Tipo, uploads: [UploadModel]) -> Observable<DigitalizacaoModel> {
+            return Observable.create { observer in
+                do {
+                    let model = try DigitalizacaoService.criar(referencia: referencia, tipo: tipo, uploads: uploads)
+                    observer.onNext(model)
+                    observer.onCompleted()
+                } catch {
+                    observer.onError(error)
+                }
+                return Disposables.create()
+            }
+        }
         
         static func digitalizar(tipo: DigitalizacaoModel.Tipo, referencia: String) -> Observable<Void> {
             return Observable.create { observer in
