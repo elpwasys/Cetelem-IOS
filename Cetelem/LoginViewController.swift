@@ -11,13 +11,28 @@ import MaterialComponents
 
 class LoginViewController: CetelemViewController {
 
+    @IBOutlet weak var centerView: UIView!
     @IBOutlet weak var entrarButton: MDCRaisedButton!
     @IBOutlet weak var loginTextField: MaterialTextField!
     @IBOutlet weak var senhaTextField: MaterialTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        centerView.alpha = 0
         prepare()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let timing = UICubicTimingParameters(animationCurve: .easeIn)
+        let animator = UIViewPropertyAnimator(duration: 0.5, timingParameters: timing)
+        animator.addAnimations {
+            self.centerView.alpha = 1
+        }
+        animator.addCompletion { _ in
+            self.loginTextField.becomeFirstResponder()
+        }
+        animator.startAnimation()
     }
     
     @IBAction func onEntrarPressed() {
@@ -84,6 +99,7 @@ extension LoginViewController {
     fileprivate func asyncAutenticarCompleted(dispositivo: Dispositivo) {
         Dispositivo.current = dispositivo
         let controller = UIStoryboard.viewController("Menu", identifier: "Scene.Reveal")
+        controller.modalTransitionStyle = .crossDissolve
         self.present(controller, animated: true, completion: nil)
     }
     

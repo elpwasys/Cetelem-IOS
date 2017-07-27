@@ -10,13 +10,26 @@ import UIKit
 
 class DrawerViewController: CetelemViewController {
     
-    private var drawerButton: UIBarButtonItem!
+    fileprivate var overlay: UIView!
+    fileprivate var drawerButton: UIBarButtonItem!
     
     var isLeftMenu = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareDrawer()
+        prepareOverlay()
+    }
+    
+    fileprivate func prepareOverlay() {
+        if overlay == nil {
+            overlay = UIView()
+            overlay.frame = view.frame
+            overlay.center = view.center
+            overlay.alpha = 0.5
+            overlay.backgroundColor = UIColor.black
+            overlay.clipsToBounds = true
+        }
     }
     
     fileprivate func prepareDrawer() {
@@ -44,6 +57,11 @@ class DrawerViewController: CetelemViewController {
 
 extension DrawerViewController: SWRevealViewControllerDelegate {
     func revealController(_ revealController: SWRevealViewController!, willMoveTo position: FrontViewPosition) {
-        
+        if position == .right {
+            view.endEditing(true)
+            view.addSubview(overlay)
+        } else {
+            overlay.removeFromSuperview()
+        }
     }
 }

@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="G81-U3-eTH">
-                                <rect key="frame" x="16" y="269" width="343" height="128"/>
+                                <rect key="frame" x="16" y="269.5" width="343" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="hHg-IM-hvR"/>
                                 </constraints>
@@ -41,6 +41,9 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="G81-U3-eTH" id="Nfj-f4-f8p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,6 +149,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="centerView" destination="KMD-sQ-beR" id="Mmn-KF-Ryk"/>
                         <outlet property="entrarButton" destination="e2z-Cg-ahy" id="zkm-zl-XCm"/>
                         <outlet property="loginTextField" destination="LPK-NA-O8m" id="BG0-Cc-jIS"/>
                         <outlet property="senhaTextField" destination="OjC-yP-VJy" id="QAh-X5-MFJ"/>

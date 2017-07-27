@@ -39,7 +39,7 @@ class PesquisaViewController: DrawerViewController {
     }
     
     @IBAction func onSearchTapped(_ sender: UIBarButtonItem) {
-        
+        openFiltroDialog()
     }
     
     @IBAction func onRefreshTapped(_ sender: UIBarButtonItem) {
@@ -98,6 +98,11 @@ extension PesquisaViewController {
             rows = []
         }
         self.tableView.reloadData()
+    }
+    
+    fileprivate func openFiltroDialog() {
+        let dialog = FiltroDialog.create(view: revealViewController().view)
+        dialog.show()
     }
 }
 

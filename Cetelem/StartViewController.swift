@@ -10,26 +10,33 @@ import UIKit
 
 class StartViewController: CetelemViewController {
 
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
+    @IBOutlet weak var imageView: UIImageView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigate()
+        let timing = UICubicTimingParameters(animationCurve: .easeOut)
+        let animator = UIViewPropertyAnimator(duration: 0.5, timingParameters: timing)
+        animator.addAnimations {
+            self.imageView.alpha = 0
+        }
+        animator.addCompletion { _ in
+            self.navigate()
+        }
+        animator.startAnimation()
     }
 
     private func navigate() {
         let controller: UIViewController
-        if Dispositivo.current != nil {
-            controller = UIStoryboard.viewController("Menu", identifier: "Scene.Reveal")
-        } else {
+        if Dispositivo.current == nil {
             controller = UIStoryboard.viewController("Main", identifier: "Scene.Login")
+        } else {
+            controller = UIStoryboard.viewController("Menu", identifier: "Scene.Reveal")
+            controller.modalTransitionStyle = .crossDissolve
         }
-        self.present(controller, animated: false, completion: nil)
+        self.present(controller, animated: true, completion: nil)
     }
 }

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CD9B84D53374DFA114528CC2 /* Pods_Cetelem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FBB880342F83F4E7C57F8E /* Pods_Cetelem.framework */; };
+		EE0358DC1F2920310005A466 /* PendenciaDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0358DB1F2920310005A466 /* PendenciaDialog.xib */; };
+		EE0358DE1F2924A20005A466 /* PendenciaDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0358DD1F2924A20005A466 /* PendenciaDialog.swift */; };
+		EE2E595E1F2981AF00E5A305 /* FiltroDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2E595D1F2981AF00E5A305 /* FiltroDialog.xib */; };
+		EE2E59601F29860600E5A305 /* FiltroDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E595F1F29860600E5A305 /* FiltroDialog.swift */; };
 		EE3738561F24F27E00A1FE70 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */; };
 		EE3738581F24F29400A1FE70 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */; };
 		EE37385B1F250FD900A1FE70 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */; };
@@ -111,6 +115,10 @@
 
 /* Begin PBXFileReference section */
 		32FBB880342F83F4E7C57F8E /* Pods_Cetelem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cetelem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE0358DB1F2920310005A466 /* PendenciaDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendenciaDialog.xib; sourceTree = "<group>"; };
+		EE0358DD1F2924A20005A466 /* PendenciaDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendenciaDialog.swift; sourceTree = "<group>"; };
+		EE2E595D1F2981AF00E5A305 /* FiltroDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FiltroDialog.xib; sourceTree = "<group>"; };
+		EE2E595F1F29860600E5A305 /* FiltroDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltroDialog.swift; sourceTree = "<group>"; };
 		EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +307,10 @@
 				EED57FAC1F27F8C800A48837 /* Alert.xib */,
 				EED57FAE1F286C7800A48837 /* DigitalizacaoDialog.xib */,
 				EED57FB01F2879AA00A48837 /* DigitalizacaoDialog.swift */,
+				EE0358DB1F2920310005A466 /* PendenciaDialog.xib */,
+				EE0358DD1F2924A20005A466 /* PendenciaDialog.swift */,
+				EE2E595D1F2981AF00E5A305 /* FiltroDialog.xib */,
+				EE2E595F1F29860600E5A305 /* FiltroDialog.swift */,
 			);
 			name = Dialog;
 			sourceTree = "<group>";
@@ -617,9 +629,11 @@
 				EE37385C1F250FD900A1FE70 /* RadioTableViewCell.xib in Resources */,
 				EED57FAF1F286C7800A48837 /* DigitalizacaoDialog.xib in Resources */,
 				EEDCC6551F2447BB00CE5C8A /* Localizable.strings in Resources */,
+				EE2E595E1F2981AF00E5A305 /* FiltroDialog.xib in Resources */,
 				EED57FAD1F27F8C800A48837 /* Alert.xib in Resources */,
 				EE37387A1F25157200A1FE70 /* TableHeaderView.xib in Resources */,
 				EEDCC5D31F243BE700CE5C8A /* Assets.xcassets in Resources */,
+				EE0358DC1F2920310005A466 /* PendenciaDialog.xib in Resources */,
 				EE3738681F2514E800A1FE70 /* snap-check.png in Resources */,
 				EE3738691F2514E800A1FE70 /* snap-camera.png in Resources */,
 				EE3738891F25784200A1FE70 /* TextFieldTableViewCell.xib in Resources */,
@@ -689,6 +703,7 @@
 				EED57FB51F28A80E00A48837 /* DocumentoService.swift in Sources */,
 				EEDCC6291F243E2D00CE5C8A /* Model.swift in Sources */,
 				EE37385E1F25101A00A1FE70 /* RadioButton.swift in Sources */,
+				EE2E59601F29860600E5A305 /* FiltroDialog.swift in Sources */,
 				EED57FC01F28AE1A00A48837 /* ArrayDataSet.swift in Sources */,
 				EEDCC64F1F243ECC00CE5C8A /* Cetelem.swift in Sources */,
 				EEDCC6121F243E1000CE5C8A /* HttpStatus.swift in Sources */,
@@ -703,6 +718,7 @@
 				EEDCC6281F243E2D00CE5C8A /* AppViewController.swift in Sources */,
 				EEDCC6271F243E2D00CE5C8A /* Service.swift in Sources */,
 				EEDCC6481F243EA800CE5C8A /* StartViewController.swift in Sources */,
+				EE0358DE1F2924A20005A466 /* PendenciaDialog.swift in Sources */,
 				EED57FA31F27D22000A48837 /* ProcessoRegraModel.swift in Sources */,
 				EEDCC6251F243E2D00CE5C8A /* Color.swift in Sources */,
 				EEDCC60C1F243E0B00CE5C8A /* DateUtils.swift in Sources */,

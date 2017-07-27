@@ -29,6 +29,14 @@ class DocumentoListaViewController: CetelemViewController {
         prepare()
         carregar()
     }
+    
+    override func showActivityIndicator() {
+        if let controller = revealViewController() {
+            App.Loading.shared.show(view: controller.view)
+        } else {
+            super.showActivityIndicator()
+        }
+    }
 
     @IBAction func onCameraTapped(_ sender: UIBarButtonItem) {
         presentSnapViewController()
@@ -82,6 +90,8 @@ extension DocumentoListaViewController {
     }
     
     fileprivate func popular(_ dataSet: ArrayDataSet<DocumentoModel, DocumentoMeta>) {
+        opcionais.removeAll()
+        obrigatorios.removeAll()
         if let documentos = dataSet.data {
             for documento in documentos {
                 if documento.obrigatorio {
@@ -92,6 +102,16 @@ extension DocumentoListaViewController {
                 tableView.reloadData()
             }
         }
+    }
+    
+    fileprivate func documentoBy(indexPath: IndexPath) -> DocumentoModel {
+        let documento: DocumentoModel
+        if indexPath.section == 0 {
+            documento = obrigatorios[indexPath.row]
+        } else {
+            documento = opcionais[indexPath.row]
+        }
+        return documento
     }
 }
 
@@ -124,7 +144,16 @@ extension DocumentoListaViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return TableHeaderView.height
+        var height: CGFloat = 0
+        if (section == 0 && !obrigatorios.isEmpty) || (section == 1 && !opcionais.isEmpty) {
+            height = TableHeaderView.height
+        }
+        return height
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let documento = documentoBy(indexPath: indexPath)
+        return documento.status == .pendente ? DocumentoTableViewCell.totalHeight : DocumentoTableViewCell.detalheHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -157,13 +186,8 @@ extension DocumentoListaViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DocumentoTableViewCell.reusableCellIdentifier, for: indexPath) as! DocumentoTableViewCell
-        let documento: DocumentoModel
-        if indexPath.section == 0 {
-            documento = obrigatorios[indexPath.row]
-        } else {
-            documento = opcionais[indexPath.row]
-        }
-        cell.prepare(documento)
+        let documento = documentoBy(indexPath: indexPath)
+        cell.prepare(documento, delegate: self)
         return cell
     }
 }
@@ -173,6 +197,23 @@ extension DocumentoListaViewController {
     
     fileprivate func asyncDataSetCompleted(_ dataSet: ArrayDataSet<DocumentoModel, DocumentoMeta>) {
         popular(dataSet)
+    }
+}
+
+extension DocumentoListaViewController: DocumentoTableViewCellDelegate {
+    
+    func onJustificarTapped(cell: DocumentoTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            let documento = documentoBy(indexPath: indexPath)
+            let view = revealViewController().view!
+            let dialog = PendenciaDialog.create(model: documento, view: view)
+            dialog.completionHandler = { aswner, justificativa in
+                if aswner {
+                    dialog.hide()
+                }
+            }
+            dialog.show()
+        }
     }
 }
 

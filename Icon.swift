@@ -29,4 +29,5 @@ struct Icon {
     static let sendWhite = icon("ic_send_white")
     static let saveWhite = icon("ic_save_white")
     static let collectionsWhite = icon("ic_collections_white")
+    static let undoWhite = icon("ic_undo_white")
 }
