@@ -13,9 +13,12 @@ class PendenciaDialog: View {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-        
+    @IBOutlet weak var errorLabel: UILabel!
+    
     @IBOutlet weak var observacaoTextView: UITextView!
     @IBOutlet weak var justificativaTextView: UITextView!
+    
+    @IBOutlet weak var observacaoTextViewHeightConstraint: NSLayoutConstraint!
     
     var completionHandler: ((Bool, String?) -> Void)?
     
@@ -29,20 +32,45 @@ class PendenciaDialog: View {
     }
     
     @IBAction func onJustificarTapped() {
-        if let completionHandler = self.completionHandler {
-            completionHandler(true, "")
+        if validate() {
+            if let completionHandler = self.completionHandler {
+                let text = justificativaTextView.text
+                completionHandler(true, text)
+            }
         }
     }
 }
 
 extension PendenciaDialog {
     
+    fileprivate func validate() -> Bool {
+        var valid = true;
+        let requiredText = TextUtils.localized(forKey: "Label.CampoObrigatorio")
+        errorLabel.text = nil
+        if TextUtils.isBlank(justificativaTextView.text) {
+            let label = TextUtils.localized(forKey: "Label.Justificativa")
+            errorLabel.text = "\(label) \(requiredText)"
+            valid = false
+        }
+        return valid
+    }
+    
     static func create(model: DocumentoModel, view: UIView) -> PendenciaDialog {
         
         let dialog = Bundle.main.loadNibNamed("PendenciaDialog", owner: view, options: nil)?.first as! PendenciaDialog
         dialog.prepare()
         
-        let size = CGSize(width: view.frame.width - CGFloat(32), height: dialog.frame.height)
+        ViewUtils.text(model.irregularidadeNome, for: dialog.titleLabel)
+        ViewUtils.text(model.pendenciaObservacao, for: dialog.observacaoTextView)
+        
+        var size = CGSize(width: view.frame.width - CGFloat(32), height: dialog.frame.height)
+        let sizeHeight = dialog.observacaoTextView.frame.size.height
+        let contentSizeHeight = dialog.observacaoTextView.contentSize.height
+        if sizeHeight < contentSizeHeight {
+            dialog.observacaoTextViewHeightConstraint.constant = contentSizeHeight
+            size = CGSize(width: view.frame.width - CGFloat(32), height: dialog.frame.height - sizeHeight + contentSizeHeight)
+        }
+        
         dialog.frame.size = size
         
         dialog.view = view
@@ -87,6 +115,9 @@ extension PendenciaDialog {
             animator.addAnimations {
                 self.alpha = 1
             }
+            animator.addCompletion({ _ in
+                self.justificativaTextView.becomeFirstResponder()
+            })
             animator.startAnimation()
         }
     }

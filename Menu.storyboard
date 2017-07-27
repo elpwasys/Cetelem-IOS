@@ -524,8 +524,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWb-DG-4Po">
+                                <rect key="frame" x="0.0" y="64" width="375" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hay-kZ-Os3">
+                                        <rect key="frame" x="16" y="16" width="343" height="52"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.78546363115310669" green="0.14768487215042114" blue="0.12861725687980652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96604818110000001" green="0.25382402539999999" blue="0.17622217539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Hay-kZ-Os3" secondAttribute="bottom" constant="16" id="CvS-e6-NBu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hay-kZ-Os3" secondAttribute="trailing" constant="16" id="Grb-FW-BBG"/>
+                                    <constraint firstAttribute="height" constant="84" id="NDG-kO-MjX"/>
+                                    <constraint firstItem="Hay-kZ-Os3" firstAttribute="top" secondItem="RWb-DG-4Po" secondAttribute="top" constant="16" id="gjJ-mF-zkg"/>
+                                    <constraint firstItem="Hay-kZ-Os3" firstAttribute="leading" secondItem="RWb-DG-4Po" secondAttribute="leading" constant="16" id="hLT-5h-86Y"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xEY-U1-ZRf">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="148" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqK-Db-0g6" customClass="RoundButton" customModule="Cetelem" customModuleProvider="target">
@@ -575,14 +596,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="B8p-wu-dTy" firstAttribute="top" secondItem="xEY-U1-ZRf" secondAttribute="bottom" id="N1D-EN-gu1"/>
+                            <constraint firstItem="xEY-U1-ZRf" firstAttribute="top" secondItem="RWb-DG-4Po" secondAttribute="bottom" id="GGm-HN-IkX"/>
                             <constraint firstAttribute="bottom" secondItem="3yo-Mc-yaW" secondAttribute="bottom" constant="16" id="Q84-xw-ikl"/>
+                            <constraint firstItem="xEY-U1-ZRf" firstAttribute="leading" secondItem="NOZ-ag-hiB" secondAttribute="leading" id="RWf-ym-Y4K"/>
+                            <constraint firstAttribute="trailing" secondItem="RWb-DG-4Po" secondAttribute="trailing" id="U1Z-VB-IPO"/>
                             <constraint firstAttribute="trailing" secondItem="aqK-Db-0g6" secondAttribute="trailing" constant="16" id="W8l-xA-lmQ"/>
-                            <constraint firstItem="xEY-U1-ZRf" firstAttribute="top" secondItem="vFm-Pv-abi" secondAttribute="bottom" id="Zbv-wx-ThT"/>
-                            <constraint firstItem="xEY-U1-ZRf" firstAttribute="leading" secondItem="NOZ-ag-hiB" secondAttribute="leading" id="eGh-5Z-IMN"/>
+                            <constraint firstAttribute="trailing" secondItem="xEY-U1-ZRf" secondAttribute="trailing" id="bVj-h0-eWA"/>
+                            <constraint firstItem="RWb-DG-4Po" firstAttribute="top" secondItem="vFm-Pv-abi" secondAttribute="bottom" id="e5B-zk-hnc"/>
                             <constraint firstAttribute="trailing" secondItem="3yo-Mc-yaW" secondAttribute="trailing" constant="16" id="k94-Yu-dns"/>
                             <constraint firstItem="B8p-wu-dTy" firstAttribute="top" secondItem="aqK-Db-0g6" secondAttribute="bottom" constant="16" id="kNA-CF-1Gi"/>
-                            <constraint firstAttribute="trailing" secondItem="xEY-U1-ZRf" secondAttribute="trailing" id="z5d-J1-gaz"/>
+                            <constraint firstItem="RWb-DG-4Po" firstAttribute="leading" secondItem="NOZ-ag-hiB" secondAttribute="leading" id="uo0-D7-kdS"/>
+                            <constraint firstItem="B8p-wu-dTy" firstAttribute="top" secondItem="xEY-U1-ZRf" secondAttribute="bottom" id="war-2y-LbB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Documentos" id="8VA-W6-xKf">
@@ -606,6 +630,9 @@
                         <outlet property="reenviarButton" destination="3yo-Mc-yaW" id="JD3-oN-sah"/>
                         <outlet property="refreshButton" destination="Kw1-hf-tss" id="RFG-DL-cnS"/>
                         <outlet property="tableView" destination="xEY-U1-ZRf" id="xW4-j7-Ght"/>
+                        <outlet property="topLabel" destination="Hay-kZ-Os3" id="Ozv-TS-W02"/>
+                        <outlet property="topView" destination="RWb-DG-4Po" id="Pep-wF-h9P"/>
+                        <outlet property="topViewHeightConstraint" destination="NDG-kO-MjX" id="WOt-Kt-zBF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPl-LQ-5oW" userLabel="First Responder" sceneMemberID="firstResponder"/>

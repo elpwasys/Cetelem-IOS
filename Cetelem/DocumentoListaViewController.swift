@@ -11,14 +11,21 @@ import UIKit
 class DocumentoListaViewController: CetelemViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    
     @IBOutlet weak var enviarButton: RoundButton!
     @IBOutlet weak var reenviarButton: RoundButton!
 
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
+
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var topViewHeightConstraint: NSLayoutConstraint!
     
     var id: Int?
+    var topViewHeight: CGFloat {
+        return 84
+    }
     
     fileprivate var paths = [String]()
     fileprivate var opcionais = [DocumentoModel]()
@@ -77,6 +84,8 @@ class DocumentoListaViewController: CetelemViewController {
 extension DocumentoListaViewController {
     
     fileprivate func clear() {
+        topView.isHidden = true
+        topViewHeightConstraint.constant = 0
         enviarButton.isHidden = true
         reenviarButton.isHidden = true
         cameraButton.isEnabled = false
@@ -87,6 +96,7 @@ extension DocumentoListaViewController {
     
     fileprivate func prepare() {
         prepareTableView()
+        clear()
     }
     
     fileprivate func prepareTableView() {
@@ -133,14 +143,21 @@ extension DocumentoListaViewController {
         }
     }
     
+    fileprivate func justificar(_ id: Int, _ justificativa: String) {
+        let model = JustificativaModel(id, justificativa)
+        startAsyncJustificar(model)
+    }
+    
     fileprivate func popular(_ dataSet: ArrayDataSet<DocumentoModel, DocumentoMeta>) {
         
-        cameraButton.isEnabled = false
-        
-        enviarButton.isHidden = true
-        reenviarButton.isHidden = true
+        clear()
         
         if let meta = dataSet.meta {
+            if let log = meta.log {
+                topView.isHidden = false
+                topViewHeightConstraint.constant = topViewHeight
+                ViewUtils.text(log.observacao, for: topLabel)
+            }
             if let regra = meta.regra {
                 cameraButton.isEnabled = regra.podeDigitalizar
                 if (regra.podeEnviar && !regra.hasAnyPendencia()) {
@@ -151,9 +168,6 @@ extension DocumentoListaViewController {
                 }
             }
         }
-        
-        opcionais.removeAll()
-        obrigatorios.removeAll()
         
         if let documentos = dataSet.data {
             for documento in documentos {
@@ -262,9 +276,10 @@ extension DocumentoListaViewController: DocumentoTableViewCellDelegate {
             let documento = documentoBy(indexPath: indexPath)
             let view = revealViewController().view!
             let dialog = PendenciaDialog.create(model: documento, view: view)
-            dialog.completionHandler = { aswner, justificativa in
-                if aswner {
-                    dialog.hide()
+            dialog.completionHandler = { aswner, text in
+                dialog.hide()
+                if aswner, let justificativa = text {
+                    self.justificar(documento.id!, justificativa)
                 }
             }
             dialog.show()
@@ -282,6 +297,14 @@ extension DocumentoListaViewController {
             showMessage(content: content, theme: .success)
         } catch {
             handle(error)
+        }
+    }
+    
+    fileprivate func asyncJustificarCompleted(_ model: ResultModel) {
+        if model.isSuccess {
+            let content = TextUtils.localized(forKey: "Message.JustificativaSucesso")
+            showMessage(content: content, theme: .success)
+            carregar()
         }
     }
     
@@ -363,6 +386,23 @@ extension DocumentoListaViewController {
         prepare(for: observable).subscribe(
             onNext: { model in
                 self.asyncCriarCompleted(model)
+            },
+            onError: { error in
+                self.hideActivityIndicator()
+                self.handle(error)
+            },
+            onCompleted: {
+                self.hideActivityIndicator()
+            }
+        ).addDisposableTo(disposableBag)
+    }
+    
+    fileprivate func startAsyncJustificar(_ model: JustificativaModel) {
+        self.showActivityIndicator()
+        let observable = DocumentoService.Async.justificar(model: model)
+        prepare(for: observable).subscribe(
+            onNext: { model in
+                self.asyncJustificarCompleted(model)
             },
             onError: { error in
                 self.hideActivityIndicator()

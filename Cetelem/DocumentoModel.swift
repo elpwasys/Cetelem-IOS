@@ -57,6 +57,9 @@ class DocumentoModel: Model {
         podeExcluir <- map["podeExcluir"]
         justificavel <- map["justificavel"]
         digitalizavel <- map["digitalizavel"]
+        irregularidadeNome <- map["irregularidadeNome"]
+        pendenciaObservacao <- map["pendenciaObservacao"]
+        pendenciaJustificativa <- map["pendenciaJustificativa"]
         imagens <- map["imagens"]
     }
 }

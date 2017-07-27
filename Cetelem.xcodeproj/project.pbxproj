@@ -12,6 +12,7 @@
 		EE0358DE1F2924A20005A466 /* PendenciaDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0358DD1F2924A20005A466 /* PendenciaDialog.swift */; };
 		EE2E595E1F2981AF00E5A305 /* FiltroDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2E595D1F2981AF00E5A305 /* FiltroDialog.xib */; };
 		EE2E59601F29860600E5A305 /* FiltroDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E595F1F29860600E5A305 /* FiltroDialog.swift */; };
+		EE3296AF1F2A5E0A00259D4A /* JustificativaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3296AE1F2A5E0A00259D4A /* JustificativaModel.swift */; };
 		EE3738561F24F27E00A1FE70 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */; };
 		EE3738581F24F29400A1FE70 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */; };
 		EE37385B1F250FD900A1FE70 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */; };
@@ -119,6 +120,7 @@
 		EE0358DD1F2924A20005A466 /* PendenciaDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendenciaDialog.swift; sourceTree = "<group>"; };
 		EE2E595D1F2981AF00E5A305 /* FiltroDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FiltroDialog.xib; sourceTree = "<group>"; };
 		EE2E595F1F29860600E5A305 /* FiltroDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltroDialog.swift; sourceTree = "<group>"; };
+		EE3296AE1F2A5E0A00259D4A /* JustificativaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustificativaModel.swift; sourceTree = "<group>"; };
 		EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				EED57FB61F28A8AF00A48837 /* DocumentoModel.swift */,
 				EED57FB91F28A8CE00A48837 /* ImagemModel.swift */,
 				EED57FBD1F28ACBA00A48837 /* ProcessoLogModel.swift */,
+				EE3296AE1F2A5E0A00259D4A /* JustificativaModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				EEDCC5EC1F243DA300CE5C8A /* TipoProcessoModel.swift in Sources */,
 				EEDCC6241F243E2D00CE5C8A /* App.swift in Sources */,
 				EED57FBA1F28A8CE00A48837 /* ImagemModel.swift in Sources */,
+				EE3296AF1F2A5E0A00259D4A /* JustificativaModel.swift in Sources */,
 				EEDCC5F01F243DA300CE5C8A /* FiltroModel.swift in Sources */,
 				EEDCC6381F243E8C00CE5C8A /* MenuTableViewCell.swift in Sources */,
 				EEDCC6181F243E2400CE5C8A /* PickerField.swift in Sources */,

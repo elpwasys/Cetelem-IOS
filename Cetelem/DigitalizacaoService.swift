@@ -46,20 +46,20 @@ class DigitalizacaoService: Service {
         // REGISTRO DE DIGITALIZACAO
         let predicate = NSPredicate(format: "referencia = %@ and tipo = %@", referencia, tipo.rawValue)
         var digitalizacao = realm.objects(Digitalizacao.self).filter(predicate).first
-        try realm.write {
-            if digitalizacao != nil {
-                let status = DigitalizacaoModel.Status(rawValue: digitalizacao!.status)
-                if status == .enviando {
-                    throw Trouble.any("Aguarde a digitalizacao anterior terminar para poder enviar outra.")
-                }
-            } else {
-                digitalizacao = Digitalizacao()
-                digitalizacao!.id = try RealmService.nextId(Digitalizacao.self)
-                digitalizacao!.tipo = tipo.rawValue
-                digitalizacao!.dataHora = Date()
-                digitalizacao!.tentativas = 0
-                digitalizacao!.referencia = referencia
+        if digitalizacao != nil {
+            let status = DigitalizacaoModel.Status(rawValue: digitalizacao!.status)
+            if status == .enviando {
+                throw Trouble.any("Aguarde a digitalizacao anterior terminar para poder enviar outra.")
             }
+        } else {
+            digitalizacao = Digitalizacao()
+            digitalizacao!.id = try RealmService.nextId(Digitalizacao.self)
+            digitalizacao!.tipo = tipo.rawValue
+            digitalizacao!.dataHora = Date()
+            digitalizacao!.tentativas = 0
+            digitalizacao!.referencia = referencia
+        }
+        try realm.write {
             digitalizacao!.status = DigitalizacaoModel.Status.aguardando.rawValue
             digitalizacao!.mensagem = nil
             digitalizacao!.dataHoraEnvio = nil

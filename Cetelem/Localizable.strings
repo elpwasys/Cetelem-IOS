@@ -60,6 +60,7 @@
 "Label.Enviar" = "Enviar";
 "Label.Reenviar" = "Reenviar";
 "Label.Salvar" = "Salvar";
+"Label.Justificativa" = "Justificativa";
 
 /* Message */
 "Message.CampoInvalidoMinLength" = "o tamanho mínimo é";
@@ -80,3 +81,4 @@
 "Message.ProcessoPendente" = "Existe uma pendência para este processo";
 "Message.SemInfoDigitalizacao" = "Não há informações de digitalização";
 "Message.ErroDigitalizacao" = "Erro na digitalização";
+"Message.JustificativaSucesso" = "Justificativa enviada com sucesso";

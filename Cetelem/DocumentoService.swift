@@ -13,6 +13,18 @@ import Alamofire
 
 class DocumentoService: Service {
     
+    static func justificar(model: JustificativaModel) throws -> ResultModel {
+        let url = "\(Config.restURL)/documento/justificar"
+        let parameters = model.dictionary
+        let response: DataResponse<ResultModel> = try Network.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: Device.headers).parse()
+        let result = response.result
+        if result.isFailure {
+            throw result.error!
+        }
+        let dataSet = result.value!
+        return dataSet
+    }
+    
     static func enviar(id: Int) throws -> ArrayDataSet<DocumentoModel, DocumentoMeta> {
         let referencia = "\(id)"
         let exists = try DigitalizacaoService.existsBy(referencia: referencia, tipo: .tipificacao, status: [.enviando, .aguardando])
@@ -51,6 +63,19 @@ class DocumentoService: Service {
     }
     
     class Async {
+        
+        static func justificar(model: JustificativaModel) -> Observable<ResultModel> {
+            return Observable.create { observer in
+                do {
+                    let result = try DocumentoService.justificar(model: model)
+                    observer.onNext(result)
+                    observer.onCompleted()
+                } catch {
+                    observer.onError(error)
+                }
+                return Disposables.create()
+            }
+        }
         
         static func enviar(id: Int) -> Observable<ArrayDataSet<DocumentoModel, DocumentoMeta>> {
             return Observable.create { observer in
