@@ -67,13 +67,14 @@ class DigitalizacaoService: Service {
             // REGISTROS DE ARQUIVO DA DIGITALIZACAO
             var paths = [String: String]()
             let directory = try ImageService.create(directory: .uploads).url
-            for upload in uploads {
+            let id = try RealmService.nextId(Arquivo.self)
+            for (index, upload) in uploads.enumerated() {
                 let url = URL(fileURLWithPath: upload.path)
                 let path = directory.appendingPathComponent(url.lastPathComponent).path
                 var arquivo = realm.objects(Arquivo.self).filter(NSPredicate(format: "caminho = %@", path)).first
                 if arquivo == nil {
                     arquivo = Arquivo()
-                    arquivo!.id = try RealmService.nextId(Arquivo.self)
+                    arquivo!.id = id + index
                     arquivo!.caminho = path
                     arquivo!.digitalizacao = digitalizacao
                     digitalizacao!.arquivos.append(arquivo!)

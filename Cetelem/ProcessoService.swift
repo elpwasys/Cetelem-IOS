@@ -24,7 +24,7 @@ class ProcessoService: Service {
         let value = result.value!
         if let uploads = model.uploads {
             let referencia = "\(value.id!)"
-            try DigitalizacaoService.criar(referencia: referencia, tipo: .tipificacao, uploads: uploads)
+            _ = try DigitalizacaoService.criar(referencia: referencia, tipo: .tipificacao, uploads: uploads)
             try DigitalizacaoService.digitalizar(tipo: .tipificacao, referencia: referencia)
         }
         return value

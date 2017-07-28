@@ -19,6 +19,7 @@
 "Processo.Status.concluido" = "Concluído";
 "Processo.Status.cancelado" = "Cancelado";
 "Processo.Status.emProcessamento" = "Em Processamento";
+"Processo.Status.concluidoAutomatico" = "Concluído automático";
 
 /* Documento Status */
 "Documento.Status.incluido" = "Incluído";
@@ -61,6 +62,7 @@
 "Label.Reenviar" = "Reenviar";
 "Label.Salvar" = "Salvar";
 "Label.Justificativa" = "Justificativa";
+"Label.Excluir" = "Excluir";
 
 /* Message */
 "Message.CampoInvalidoMinLength" = "o tamanho mínimo é";
@@ -82,3 +84,5 @@
 "Message.SemInfoDigitalizacao" = "Não há informações de digitalização";
 "Message.ErroDigitalizacao" = "Erro na digitalização";
 "Message.JustificativaSucesso" = "Justificativa enviada com sucesso";
+"Message.ExcluirImagem" = "Deseja excluir esta imagem?";
+"Message.ImagemUpload" = "Enviando imagem para o servidor";

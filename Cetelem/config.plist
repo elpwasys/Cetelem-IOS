@@ -5,9 +5,9 @@
 	<key>Protocol</key>
 	<string>http</string>
 	<key>Host</key>
-	<string>192.168.100.14</string>
+	<string>wasys-ocr2.wasys.com.br</string>
 	<key>Port</key>
-	<string>8080</string>
+	<string>85</string>
 	<key>ContextApp</key>
 	<string>cetelem</string>
 	<key>ContextFile</key>

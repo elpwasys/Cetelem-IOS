@@ -13,6 +13,17 @@ import Alamofire
 
 class DocumentoService: Service {
     
+    static func obter(id: Int) throws -> DocumentoModel {
+        let url = "\(Config.restURL)/documento/obter/\(id)"
+        let response: DataResponse<DocumentoModel> = try Network.request(url, method: .get, encoding: JSONEncoding.default, headers: Device.headers).parse()
+        let result = response.result
+        if result.isFailure {
+            throw result.error!
+        }
+        let dataSet = result.value!
+        return dataSet
+    }
+    
     static func justificar(model: JustificativaModel) throws -> ResultModel {
         let url = "\(Config.restURL)/documento/justificar"
         let parameters = model.dictionary
@@ -63,6 +74,19 @@ class DocumentoService: Service {
     }
     
     class Async {
+        
+        static func obter(id: Int) -> Observable<DocumentoModel> {
+            return Observable.create { observer in
+                do {
+                    let model = try DocumentoService.obter(id: id)
+                    observer.onNext(model)
+                    observer.onCompleted()
+                } catch {
+                    observer.onError(error)
+                }
+                return Disposables.create()
+            }
+        }
         
         static func justificar(model: JustificativaModel) -> Observable<ResultModel> {
             return Observable.create { observer in

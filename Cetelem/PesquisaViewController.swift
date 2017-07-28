@@ -24,6 +24,10 @@ class PesquisaViewController: DrawerViewController {
     fileprivate var processoMeta: ProcessoMeta?
     fileprivate var processoPagingModel: ProcessoPagingModel?
     
+    fileprivate var isMeta: Bool {
+        return processoMeta != nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pesquisaModel = PesquisaModel()
@@ -33,9 +37,13 @@ class PesquisaViewController: DrawerViewController {
         preparePagingToolbar()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        startAsyncDataSet()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isMeta {
+            startAsyncFiltrar()
+        } else {
+            startAsyncDataSet()
+        }
     }
     
     @IBAction func onSearchTapped(_ sender: UIBarButtonItem) {
@@ -101,8 +109,17 @@ extension PesquisaViewController {
     }
     
     fileprivate func openFiltroDialog() {
-        //let dialog = FiltroDialog.create(view: revealViewController().view)
-        //dialog.show()
+        let dialog = FiltroDialog.create(filtro: pesquisaModel.filtro, meta: processoMeta, view: revealViewController().view)
+        dialog.completionHandler = { filtro in
+            dialog.hide()
+            self.pesquisaModel.filtro = filtro
+            self.startAsyncFiltrar()
+        }
+        dialog.show()
+    }
+    
+    @IBAction func unwindRefresh(segue: UIStoryboardSegue) {
+        startAsyncFiltrar()
     }
 }
 
@@ -148,14 +165,14 @@ extension PesquisaViewController {
             .subscribe(
                 onNext: { model in
                     self.asyncFilrarCompleted(model)
-            },
+                },
                 onError: { error in
                     self.hideActivityIndicator()
                     self.handle(error)
-            },
+                },
                 onCompleted: {
                     self.hideActivityIndicator()
-            }
+                }
             ).addDisposableTo(disposableBag)
     }
     
@@ -187,11 +204,6 @@ extension PesquisaViewController {
     
     fileprivate func asyncDataSetCompleted(_ dataSet: DataSet<ProcessoPagingModel, ProcessoMeta>) {
         self.atualizar(dataSet.data!)
-        
-        
         self.processoMeta = dataSet.meta
-        if let processoMeta = self.processoMeta {
-            
-        }
     }
 }

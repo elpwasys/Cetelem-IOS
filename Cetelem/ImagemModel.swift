@@ -11,6 +11,8 @@ import ObjectMapper
 
 class ImagemModel: Model {
     
+    var path: String?
+    
     var versao: Int!
     var caminho: String!
     

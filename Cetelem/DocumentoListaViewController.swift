@@ -37,14 +37,6 @@ class DocumentoListaViewController: CetelemViewController {
         carregar()
     }
     
-    override func showActivityIndicator() {
-        if let controller = revealViewController() {
-            App.Loading.shared.show(view: controller.view)
-        } else {
-            super.showActivityIndicator()
-        }
-    }
-    
     @IBAction func onEnviarTapped() {
         let alert = Alert.create(view: revealViewController().view)
         alert.title = TextUtils.localized(forKey: "Label.Enviar")
@@ -102,7 +94,6 @@ extension DocumentoListaViewController {
     fileprivate func prepareTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: DocumentoTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: DocumentoTableViewCell.reusableCellIdentifier)
@@ -231,6 +222,13 @@ extension DocumentoListaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let documento = documentoBy(indexPath: indexPath)
         return documento.status == .pendente ? DocumentoTableViewCell.totalHeight : DocumentoTableViewCell.detalheHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let documento = self.documentoBy(indexPath: indexPath)
+        let controller = UIStoryboard.viewController("Menu", identifier: "Scene.Documento.Detalhe") as! DocumentoDetalheViewController
+        controller.id = documento.id
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

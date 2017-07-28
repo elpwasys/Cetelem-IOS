@@ -45,14 +45,6 @@ class DrawerViewController: CetelemViewController {
             }
         }
     }
-    
-    override func showActivityIndicator() {
-        if let controller = revealViewController() {
-            App.Loading.shared.show(view: controller.view)
-        } else {
-            super.showActivityIndicator()
-        }
-    }
 }
 
 extension DrawerViewController: SWRevealViewControllerDelegate {

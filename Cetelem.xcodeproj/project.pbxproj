@@ -13,6 +13,7 @@
 		EE2E595E1F2981AF00E5A305 /* FiltroDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2E595D1F2981AF00E5A305 /* FiltroDialog.xib */; };
 		EE2E59601F29860600E5A305 /* FiltroDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2E595F1F29860600E5A305 /* FiltroDialog.swift */; };
 		EE3296AF1F2A5E0A00259D4A /* JustificativaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3296AE1F2A5E0A00259D4A /* JustificativaModel.swift */; };
+		EE3296B11F2A6E7100259D4A /* DocumentoDetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3296B01F2A6E7100259D4A /* DocumentoDetalheViewController.swift */; };
 		EE3738561F24F27E00A1FE70 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */; };
 		EE3738581F24F29400A1FE70 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */; };
 		EE37385B1F250FD900A1FE70 /* RadioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */; };
@@ -80,7 +81,6 @@
 		EEDCC60F1F243E0B00CE5C8A /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC60A1F243E0B00CE5C8A /* ViewUtils.swift */; };
 		EEDCC6101F243E0B00CE5C8A /* ShadowUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC60B1F243E0B00CE5C8A /* ShadowUtils.swift */; };
 		EEDCC6121F243E1000CE5C8A /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6111F243E1000CE5C8A /* HttpStatus.swift */; };
-		EEDCC6171F243E2400CE5C8A /* DateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6131F243E2400CE5C8A /* DateField.swift */; };
 		EEDCC6181F243E2400CE5C8A /* PickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6141F243E2400CE5C8A /* PickerField.swift */; };
 		EEDCC6191F243E2400CE5C8A /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6151F243E2400CE5C8A /* MaterialTextField.swift */; };
 		EEDCC61A1F243E2400CE5C8A /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC6161F243E2400CE5C8A /* Label.swift */; };
@@ -112,15 +112,20 @@
 		EEDCC6541F2447BB00CE5C8A /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC6521F2447BB00CE5C8A /* config.plist */; };
 		EEDCC6551F2447BB00CE5C8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEDCC6531F2447BB00CE5C8A /* Localizable.strings */; };
 		EEDCC65B1F2450BB00CE5C8A /* CampoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCC65A1F2450BB00CE5C8A /* CampoTableViewCell.swift */; };
+		EEDF06591F2B9E2C00F61B5A /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF06581F2B9E2C00F61B5A /* AppTextField.swift */; };
+		EEDF065B1F2BA63F00F61B5A /* AppPickerField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF065A1F2BA63F00F61B5A /* AppPickerField.swift */; };
+		EEDF065D1F2BA6E700F61B5A /* AppDateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDF065C1F2BA6E700F61B5A /* AppDateField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32FBB880342F83F4E7C57F8E /* Pods_Cetelem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cetelem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E14113781EC0741BD00885B /* Pods-Cetelem.ad hoc distribuction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cetelem.ad hoc distribuction.xcconfig"; path = "Pods/Target Support Files/Pods-Cetelem/Pods-Cetelem.ad hoc distribuction.xcconfig"; sourceTree = "<group>"; };
 		EE0358DB1F2920310005A466 /* PendenciaDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PendenciaDialog.xib; sourceTree = "<group>"; };
 		EE0358DD1F2924A20005A466 /* PendenciaDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendenciaDialog.swift; sourceTree = "<group>"; };
 		EE2E595D1F2981AF00E5A305 /* FiltroDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FiltroDialog.xib; sourceTree = "<group>"; };
 		EE2E595F1F29860600E5A305 /* FiltroDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltroDialog.swift; sourceTree = "<group>"; };
 		EE3296AE1F2A5E0A00259D4A /* JustificativaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustificativaModel.swift; sourceTree = "<group>"; };
+		EE3296B01F2A6E7100259D4A /* DocumentoDetalheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentoDetalheViewController.swift; sourceTree = "<group>"; };
 		EE3738551F24F27E00A1FE70 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		EE3738571F24F29400A1FE70 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		EE3738591F250FD900A1FE70 /* RadioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioTableViewCell.swift; sourceTree = "<group>"; };
@@ -204,7 +209,6 @@
 		EEDCC60A1F243E0B00CE5C8A /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		EEDCC60B1F243E0B00CE5C8A /* ShadowUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowUtils.swift; sourceTree = "<group>"; };
 		EEDCC6111F243E1000CE5C8A /* HttpStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
-		EEDCC6131F243E2400CE5C8A /* DateField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateField.swift; sourceTree = "<group>"; };
 		EEDCC6141F243E2400CE5C8A /* PickerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerField.swift; sourceTree = "<group>"; };
 		EEDCC6151F243E2400CE5C8A /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
 		EEDCC6161F243E2400CE5C8A /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -236,6 +240,9 @@
 		EEDCC6521F2447BB00CE5C8A /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		EEDCC6531F2447BB00CE5C8A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		EEDCC65A1F2450BB00CE5C8A /* CampoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampoTableViewCell.swift; sourceTree = "<group>"; };
+		EEDF06581F2B9E2C00F61B5A /* AppTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		EEDF065A1F2BA63F00F61B5A /* AppPickerField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPickerField.swift; sourceTree = "<group>"; };
+		EEDF065C1F2BA6E700F61B5A /* AppDateField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDateField.swift; sourceTree = "<group>"; };
 		F3250BFAB819D957A881E717 /* Pods-Cetelem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cetelem.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cetelem/Pods-Cetelem.release.xcconfig"; sourceTree = "<group>"; };
 		F866A8594CCC9A52F5C2AE4E /* Pods-Cetelem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cetelem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cetelem/Pods-Cetelem.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -356,11 +363,11 @@
 		EEDCC5DD1F243D0A00CE5C8A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EED57FA71F27F5F200A48837 /* Dialog */,
 				EED57F8F1F27052100A48837 /* Realm */,
 				EEDCC64E1F243ECC00CE5C8A /* Cetelem.swift */,
 				EEDCC5CB1F243BE700CE5C8A /* AppDelegate.swift */,
 				EEDCC6361F243E8700CE5C8A /* Cell */,
+				EED57FA71F27F5F200A48837 /* Dialog */,
 				EE3738761F25156100A1FE70 /* Header */,
 				EEDCC5E11F243D9800CE5C8A /* Model */,
 				EEDCC6351F243E7C00CE5C8A /* ViewController */,
@@ -448,8 +455,10 @@
 			children = (
 				EE37388A1F259F5900A1FE70 /* Button.swift */,
 				EE37385D1F25101A00A1FE70 /* RadioButton.swift */,
-				EEDCC6131F243E2400CE5C8A /* DateField.swift */,
 				EEDCC6141F243E2400CE5C8A /* PickerField.swift */,
+				EEDF065C1F2BA6E700F61B5A /* AppDateField.swift */,
+				EEDF065A1F2BA63F00F61B5A /* AppPickerField.swift */,
+				EEDF06581F2B9E2C00F61B5A /* AppTextField.swift */,
 				EEDCC6151F243E2400CE5C8A /* MaterialTextField.swift */,
 				EEDCC6161F243E2400CE5C8A /* Label.swift */,
 				EED57FAA1F27F81000A48837 /* View.swift */,
@@ -512,6 +521,7 @@
 				EE37388F1F25AAFA00A1FE70 /* DocumentoDialogViewController.swift */,
 				EED57FA01F27CAF900A48837 /* ProcessoDetalheViewController.swift */,
 				EED57FB21F28A38800A48837 /* DocumentoListaViewController.swift */,
+				EE3296B01F2A6E7100259D4A /* DocumentoDetalheViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -554,6 +564,7 @@
 			children = (
 				F866A8594CCC9A52F5C2AE4E /* Pods-Cetelem.debug.xcconfig */,
 				F3250BFAB819D957A881E717 /* Pods-Cetelem.release.xcconfig */,
+				8E14113781EC0741BD00885B /* Pods-Cetelem.ad hoc distribuction.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -595,7 +606,7 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = A5AW2855YQ;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -713,6 +724,7 @@
 				EED57FC31F28B7FD00A48837 /* DocumentoTableViewCell.swift in Sources */,
 				EEDCC6321F243E6A00CE5C8A /* TipoProcessoMeta.swift in Sources */,
 				EEDCC62B1F243E2D00CE5C8A /* Network.swift in Sources */,
+				EEDF065B1F2BA63F00F61B5A /* AppPickerField.swift in Sources */,
 				EED57FBC1F28AC8D00A48837 /* DocumentoMeta.swift in Sources */,
 				EEDCC6411F243E9B00CE5C8A /* ImageService.swift in Sources */,
 				EED57FB11F2879AA00A48837 /* DigitalizacaoDialog.swift in Sources */,
@@ -724,6 +736,7 @@
 				EE0358DE1F2924A20005A466 /* PendenciaDialog.swift in Sources */,
 				EED57FA31F27D22000A48837 /* ProcessoRegraModel.swift in Sources */,
 				EEDCC6251F243E2D00CE5C8A /* Color.swift in Sources */,
+				EEDF06591F2B9E2C00F61B5A /* AppTextField.swift in Sources */,
 				EEDCC60C1F243E0B00CE5C8A /* DateUtils.swift in Sources */,
 				EEDCC6191F243E2400CE5C8A /* MaterialTextField.swift in Sources */,
 				EED57FB71F28A8AF00A48837 /* DocumentoModel.swift in Sources */,
@@ -737,7 +750,6 @@
 				EEDCC6101F243E0B00CE5C8A /* ShadowUtils.swift in Sources */,
 				EEDCC5F11F243DA300CE5C8A /* CampoModel.swift in Sources */,
 				EE37385B1F250FD900A1FE70 /* RadioTableViewCell.swift in Sources */,
-				EEDCC6171F243E2400CE5C8A /* DateField.swift in Sources */,
 				EED57F971F270A0900A48837 /* DigitalizacaoModel.swift in Sources */,
 				EED57F991F270E3600A48837 /* DigitalizacaoService.swift in Sources */,
 				EED57FAB1F27F81000A48837 /* View.swift in Sources */,
@@ -746,6 +758,7 @@
 				EEDCC6401F243E9B00CE5C8A /* ProcessoService.swift in Sources */,
 				EEDCC60E1F243E0B00CE5C8A /* TextUtils.swift in Sources */,
 				EEDCC5EC1F243DA300CE5C8A /* TipoProcessoModel.swift in Sources */,
+				EEDF065D1F2BA6E700F61B5A /* AppDateField.swift in Sources */,
 				EEDCC6241F243E2D00CE5C8A /* App.swift in Sources */,
 				EED57FBA1F28A8CE00A48837 /* ImagemModel.swift in Sources */,
 				EE3296AF1F2A5E0A00259D4A /* JustificativaModel.swift in Sources */,
@@ -756,6 +769,7 @@
 				EE3738811F252D5E00A1FE70 /* SWRevealViewController.m in Sources */,
 				EEDCC62A1F243E2D00CE5C8A /* Trouble.swift in Sources */,
 				EE3738991F25AFAD00A1FE70 /* PesquisaViewController.swift in Sources */,
+				EE3296B11F2A6E7100259D4A /* DocumentoDetalheViewController.swift in Sources */,
 				EED57F8E1F26FF1400A48837 /* UploadModel.swift in Sources */,
 				EE3738791F25157200A1FE70 /* TableHeaderView.swift in Sources */,
 				EE3738581F24F29400A1FE70 /* SwitchTableViewCell.swift in Sources */,
@@ -809,6 +823,85 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EE37B40E1F2AD808007661D4 /* Ad Hoc Distribuction */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad Hoc Distribuction";
+		};
+		EE37B40F1F2AD808007661D4 /* Ad Hoc Distribuction */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E14113781EC0741BD00885B /* Pods-Cetelem.ad hoc distribuction.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Webwasys Informatica Ltda Epp (A5AW2855YQ)";
+				DEVELOPMENT_TEAM = A5AW2855YQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AKMaskField\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Floaty\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/IQKeyboardManagerSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TOCropViewController\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/IRLDocumentScanner\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Kingfisher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RealmSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftMessages\"",
+				);
+				INFOPLIST_FILE = Cetelem/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = wasys.com.br.Cetelem;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a405a524-e107-4240-98a8-699cdbfa3024";
+				PROVISIONING_PROFILE_SPECIFIER = "Cetelem Ad Hoc";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cetelem/Cetelem-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = "Ad Hoc Distribuction";
+		};
 		EEDCC5D81F243BE700CE5C8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -909,10 +1002,29 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A5AW2855YQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AKMaskField\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Floaty\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/IQKeyboardManagerSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TOCropViewController\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/IRLDocumentScanner\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Kingfisher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RealmSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftMessages\"",
+				);
 				INFOPLIST_FILE = Cetelem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wasys.com.br.Cetelem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8c8bff4e-96e0-4e65-8edc-2b74accd49e6";
+				PROVISIONING_PROFILE_SPECIFIER = "Cetelem Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cetelem/Cetelem-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -926,10 +1038,29 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A5AW2855YQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/AKMaskField\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Floaty\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/IQKeyboardManagerSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/TOCropViewController\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/IRLDocumentScanner\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Kingfisher\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MDFTextAccessibility\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MaterialComponents\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/ObjectMapper\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Realm\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RealmSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/RxSwift\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftMessages\"",
+				);
 				INFOPLIST_FILE = Cetelem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wasys.com.br.Cetelem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8c8bff4e-96e0-4e65-8edc-2b74accd49e6";
+				PROVISIONING_PROFILE_SPECIFIER = "Cetelem Dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cetelem/Cetelem-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -943,6 +1074,7 @@
 			buildConfigurations = (
 				EEDCC5D81F243BE700CE5C8A /* Debug */,
 				EEDCC5D91F243BE700CE5C8A /* Release */,
+				EE37B40E1F2AD808007661D4 /* Ad Hoc Distribuction */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -952,6 +1084,7 @@
 			buildConfigurations = (
 				EEDCC5DB1F243BE700CE5C8A /* Debug */,
 				EEDCC5DC1F243BE700CE5C8A /* Release */,
+				EE37B40F1F2AD808007661D4 /* Ad Hoc Distribuction */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

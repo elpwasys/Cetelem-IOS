@@ -155,16 +155,26 @@ extension ProcessoDetalheViewController {
             if processo.status != .pendente {
                 verificarErroDigitalizacao()
             } else {
-                let action = MDCSnackbarMessageAction()
-                action.title = TextUtils.localized(forKey: "Label.Abrir")
-                action.handler = {() in
+                /*
+                 let action = MDCSnackbarMessageAction()
+                 action.title = TextUtils.localized(forKey: "Label.Abrir")
+                 action.handler = {() in
+                 self.pushDocumentoListaViewController()
+                 }
+                 let snackbar = MDCSnackbarMessage()
+                 snackbar.text = TextUtils.localized(forKey: "Message.ProcessoPendente")
+                 snackbar.action = action
+                 snackbar.buttonTextColor = Color.accent
+                 MDCSnackbarManager.show(snackbar)
+                 
+                 */
+                let title = TextUtils.localized(forKey: "Label.Abrir")
+                let message = TextUtils.localized(forKey: "Message.ProcessoPendente")
+                
+                showSnackbar(title: title, message: message, handler: { 
                     self.pushDocumentoListaViewController()
-                }
-                let snackbar = MDCSnackbarMessage()
-                snackbar.text = TextUtils.localized(forKey: "Message.ProcessoPendente")
-                snackbar.action = action
-                snackbar.buttonTextColor = Color.accent
-                MDCSnackbarManager.show(snackbar)
+                })
+                
             }
         }
         if let regra = self.regra {

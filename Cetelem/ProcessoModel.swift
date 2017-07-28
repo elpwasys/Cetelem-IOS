@@ -56,7 +56,7 @@ class ProcessoModel: Model {
         return values
     }
     
-    enum Status: String {
+    enum Status: String, Selectable {
         case rascunho = "RASCUNHO"
         case emProcessamento = "EM_PROCESSAMENTO"
         case emAnalise = "EM_ANALISE"
@@ -72,6 +72,20 @@ class ProcessoModel: Model {
         }
         var label: String {
             return TextUtils.localized(forKey: key)
+        }
+        var value: String {
+            return self.rawValue
+        }
+        static var values: [Status] {
+            return [
+                Status.rascunho,
+                Status.emProcessamento,
+                Status.emAnalise,
+                Status.pendente,
+                Status.concluido,
+                Status.cancelado,
+                Status.concluidoAutomatico
+            ]
         }
     }
     

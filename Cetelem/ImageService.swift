@@ -8,6 +8,9 @@
 
 import Foundation
 
+import RxSwift
+import Alamofire
+
 class ImageService: Service {
     
     private static let uploadsDirectoryName = "Uploads"
@@ -28,6 +31,17 @@ class ImageService: Service {
         }
     }
     
+    static func excluir(id: Int) throws -> ResultModel {
+        let url = "\(Config.restURL)/imagem/excluir/\(id)"
+        let response: DataResponse<ResultModel> = try Network.request(url, method: .get, encoding: JSONEncoding.default, headers: Device.headers).parse()
+        let result = response.result
+        if result.isFailure {
+            throw result.error!
+        }
+        let model = result.value!
+        return model
+    }
+    
     static func move(origin: URL, destination: URL) throws {
         let manager = FileManager.default
         try manager.moveItem(at: origin, to: destination)
@@ -38,5 +52,21 @@ class ImageService: Service {
             try FileManager.default.createDirectory(at: directory.url, withIntermediateDirectories: true, attributes: nil)
         }
         return directory
+    }
+    
+    class Async {
+        
+        static func excluir(id: Int) -> Observable<ResultModel> {
+            return Observable.create { observer in
+                do {
+                    let model = try ImageService.excluir(id: id)
+                    observer.onNext(model)
+                    observer.onCompleted()
+                } catch {
+                    observer.onError(error)
+                }
+                return Disposables.create()
+            }
+        }
     }
 }

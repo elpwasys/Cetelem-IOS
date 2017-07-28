@@ -30,4 +30,5 @@ struct Icon {
     static let saveWhite = icon("ic_save_white")
     static let collectionsWhite = icon("ic_collections_white")
     static let undoWhite = icon("ic_undo_white")
+    static let dateRange = icon("ic_date_range")
 }
